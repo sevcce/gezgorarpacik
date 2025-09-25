@@ -145,28 +145,6 @@
       display: block;
     }
 
-    @media (max-width: 768px) {
-    .nav-links {
-      flex-direction: column;
-      align-items: stretch;
-    }
-  
-    .nav-item {
-      width: 100%;
-      position: relative;
-    }
-  
-    .dropdown {
-      position: relative;
-      width: 100%;
-      box-shadow: none;
-      border-radius: 0;
-    }
-  
-    .dropdown a {
-      padding-left: 1.5rem;
-    }
-  }
 
   .menu-toggle {
   display: none;
@@ -175,46 +153,7 @@
   margin-left: auto;
 }
 
-@media (max-width: 768px) {
-  .menu-toggle {
-    display: block;
-  }
 
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    background-color: rgb(180, 213, 215);
-    width: 100%;
-    position: absolute;
-    top: 52px;
-    left: 0;
-    z-index: 1000;
-  }
-
-  .nav-links.active {
-    display: flex;
-  }
-
-  .nav-links .nav-item a {
-    padding: 12px 20px;
-  }
-
-  /* Mobil dropdown kontrolü için */
-.nav-item.open .dropdown {
-  display: block;
-}
-
-/* Başlangıçta kapalı tutmak için */
-.dropdown {
-  display: none;
-}
-
-/* Hamburger menü aktifken */
-#navLinks.active {
-  display: block;
-}
-
-}
 .nav-search {
     margin-left: auto;
     margin-right: 50px;
@@ -277,15 +216,58 @@
     color: white;
 }
 
+/* Navbar Mobil Uyumluluk */
 @media (max-width: 768px) {
-    .nav-search {
-        width: 100%;
-        margin: 10px 0;
-    }
-    .nav-search input {
-        width: 100%;
-    }
+
+.menu-toggle { display: block; margin-left:auto; }
+
+.nav-links {
+  display: none;
+  flex-direction: column;
+  width: 100%;
+  background-color: rgb(31,31,31);
+  position: absolute;
+  top: 85px;
+  left: 0;
+  padding: 10px 0;
+  gap: 0;
+  z-index: 1000;
 }
+
+.nav-links.active {
+  display: flex;
+}
+
+.nav-links .nav-item {
+  width: 100%;
+}
+
+.nav-links .nav-item a {
+  padding: 12px 20px;
+  width: 100%;
+}
+
+.nav-item.open .dropdown {
+  display: block;
+  position: relative;
+  top: 0;
+  left: 0;
+  box-shadow: none;
+  border-radius: 0;
+}
+
+.dropdown a {
+  padding-left: 30px;
+}
+
+.nav-search {
+  width: 100%;
+  margin: 10px 0;
+}
+
+.nav-search input { width: 100%; }
+}
+
     
 
     #map-container {
