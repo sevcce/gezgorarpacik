@@ -263,12 +263,12 @@
 
 /* Sadece SevÖz yazısı görünsün, alt başlık gizlensin */
 .logo-text .sub-title {
-  display: none;
+  display: none !important;
 }
 
 /* Arama kutusu gizle */
 .nav-search {
-  display: none;
+  display: none !important;
 }
 }
 
@@ -677,112 +677,120 @@ body {
   <div id="tooltip"></div>
 
   <script>
-
-document.addEventListener("DOMContentLoaded", function () {
-          const navbar = document.getElementById("navbar");
-      
+    document.addEventListener("DOMContentLoaded", function () {
+      const navbar = document.getElementById("navbar");
+    
+      function buildNavbar() {
+        if (window.innerWidth <= 768) {
+          // --- Mobil Navbar ---
           navbar.innerHTML = `
             <div class="nav-logo">
               <a href="index.html" style="display:flex; align-items:center; text-decoration:none; color:inherit;">
-              <img src="WhatsApp Image 2025-09-24 at 15.26.35 3.jpeg" alt="Logo">
-              <div class="logo-text">
-      <span class="main-title">SevÖz</span>
-      <span class="sub-title">Sev Özle Yaşa</span>
-    </div>
-    </a>
+                <img src="WhatsApp Image 2025-09-24 at 15.26.35 3.jpeg" alt="Logo">
+                <div class="logo-text">
+                  <span class="main-title">SevÖz</span>
+                </div>
+              </a>
             </div>
-      
             <div class="menu-toggle" id="menuToggle">&#9776;</div>
-      
             <div class="nav-links">
-              <div class="nav-item">
-                <a href="#">ANA SAYFA</a>
-            
-              </div>
-      
+              <div class="nav-item"><a href="#">ANA SAYFA</a></div>
+              <div class="nav-item"><a href="#">İSTİKAMET</a></div>
+              <div class="nav-item"><a href="#">TEMALAR</a></div>
+              <div class="nav-item"><a href="#">BİZ KİMİZ?</a></div>
+              <div class="nav-item"><a href="#">İLETİŞİM</a></div>
+            </div>
+          `;
+        } else {
+          // --- Masaüstü Navbar ---
+          navbar.innerHTML = `
+            <div class="nav-logo">
+              <a href="index.html" style="display:flex; align-items:center; text-decoration:none; color:inherit;">
+                <img src="WhatsApp Image 2025-09-24 at 15.26.35 3.jpeg" alt="Logo">
+                <div class="logo-text">
+                  <span class="main-title">SevÖz</span>
+                  <span class="sub-title">Sev Özle Yaşa</span>
+                </div>
+              </a>
+            </div>
+            <div class="menu-toggle" id="menuToggle">&#9776;</div>
+            <div class="nav-links">
+              <div class="nav-item"><a href="#">ANA SAYFA</a></div>
               <div class="nav-item">
                 <a href="#" class="has-arrow">İSTİKAMET</a>
                 <div class="dropdown">
                   <a href="#">ASYA</a>
                   <a href="#">AVRUPA</a>
                   <a href="#">TÜRKİYE</a>
-                 
                 </div>
               </div>
-      
-              <div class="nav-item">
-                <a href="#" class="has-arrow">TEMALAR</a>
-                
-              </div>
-
-              <div class="nav-item">
-                <a href="#">BİZ KİMİZ?</a>
-              </div>  
-
-              <div class="nav-item">
-                <a href="#">İLETİŞİM</a>
-              </div>  
+              <div class="nav-item"><a href="#">TEMALAR</a></div>
+              <div class="nav-item"><a href="#">BİZ KİMİZ?</a></div>
+              <div class="nav-item"><a href="#">İLETİŞİM</a></div>
               <div class="nav-search">
-  <input type="text" id="searchInput" placeholder="Rotanızı arayın" />
-  <button class="clear-btn" id="clearBtn">&times;</button>
-  <button class="go-btn" id="goBtn">&#8594;</button>
-</div>
-
-
-
-            
+                <input type="text" id="searchInput" placeholder="Rotanızı arayın" />
+                <button class="clear-btn" id="clearBtn">&times;</button>
+                <button class="go-btn" id="goBtn">&#8594;</button>
+              </div>
+            </div>
           `;
-      
-          // === Bu satırdan sonrası innerHTML'den sonra çalışmalı ===
-          const menuToggle = document.getElementById("menuToggle");
-          const navLinks = document.querySelector(".nav-links");
-          const navItems = document.querySelectorAll(".nav-item");
-      
-          // Hamburger menü aç/kapat
+        }
+    
+        // Hamburger ve dropdown kontrol
+        const menuToggle = document.getElementById("menuToggle");
+        const navLinks = document.querySelector(".nav-links");
+        const navItems = document.querySelectorAll(".nav-item");
+    
+        if (menuToggle) {
           menuToggle.addEventListener("click", () => {
             navLinks.classList.toggle("active");
           });
-      
-          // Nav item'lara tıklama işlemleri
-          navItems.forEach(item => {
-            const link = item.querySelector("a");
-            const dropdown = item.querySelector(".dropdown");
-      
-            link.addEventListener("click", function (e) {
-              const isMobile = window.innerWidth <= 768;
-      
-              if (dropdown) {
-                e.preventDefault();
-      
-                if (isMobile) {
-                  item.classList.toggle("open");
-                } else {
-                  navItems.forEach(otherItem => {
-                    if (otherItem !== item && otherItem.querySelector(".dropdown")) {
-                      otherItem.querySelector(".dropdown").style.display = "none";
-                    }
-                    otherItem.classList.remove("open");
-                  });
-      
-                  dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
-                }
-      
-                e.stopPropagation();
+        }
+    
+        navItems.forEach(item => {
+          const link = item.querySelector("a");
+          const dropdown = item.querySelector(".dropdown");
+    
+          link.addEventListener("click", function (e) {
+            const isMobile = window.innerWidth <= 768;
+    
+            if (dropdown) {
+              e.preventDefault();
+    
+              if (isMobile) {
+                item.classList.toggle("open");
+              } else {
+                navItems.forEach(otherItem => {
+                  if (otherItem !== item && otherItem.querySelector(".dropdown")) {
+                    otherItem.querySelector(".dropdown").style.display = "none";
+                  }
+                  otherItem.classList.remove("open");
+                });
+    
+                dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
               }
-            });
-          });
-      
-          // Sayfa dışına tıklanınca masaüstü dropdown'ları kapat
-          document.addEventListener("click", () => {
-            if (window.innerWidth > 768) {
-              document.querySelectorAll(".dropdown").forEach(drop => {
-                drop.style.display = "none";
-              });
+    
+              e.stopPropagation();
             }
           });
         });
-
-    document.addEventListener("DOMContentLoaded", () => {
+    
+        document.addEventListener("click", () => {
+          if (window.innerWidth > 768) {
+            document.querySelectorAll(".dropdown").forEach(drop => {
+              drop.style.display = "none";
+            });
+          }
+        });
+      }
+    
+      // Sayfa yüklendiğinde navbar oluştur
+      buildNavbar();
+    
+      // Sayfa boyutu değişirse navbar güncelle
+      window.addEventListener("resize", buildNavbar);
+    
+      // --- Tooltip kodu ---
       const continentNamesTR = {
         "asia": "Asya",
         "europe": "Avrupa",
@@ -799,12 +807,12 @@ document.addEventListener("DOMContentLoaded", function () {
       continents.forEach(continent => {
         // Click eventi
         continent.addEventListener('click', () => {
-  if (continent.id === "asia") {
-    window.open("asia-map.html", "_blank"); // Yeni sekmede aç
-  } else {
-    alert((continentNamesTR[continent.id] || continent.id) + " kıtasına tıklandı!");
-  }
-});
+          if (continent.id === "asia") {
+            window.open("asia-map.html", "_blank"); // Yeni sekmede aç
+          } else {
+            alert((continentNamesTR[continent.id] || continent.id) + " kıtasına tıklandı!");
+          }
+        });
     
         // Hover tooltip
         continent.addEventListener('mousemove', (e) => {
@@ -818,8 +826,10 @@ document.addEventListener("DOMContentLoaded", function () {
           tooltip.style.opacity = 0;
         });
       });
+    
     });
     </script>
+    
     
 </body>
 </html>
