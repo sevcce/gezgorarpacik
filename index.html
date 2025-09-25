@@ -262,29 +262,49 @@
         z-index: 1000;
         overflow-y: auto;
         padding-top: 100px;
+        transition: transform 0.3s ease;
+        /* animasyon */
       }
 
       .nav-links.active {
         display: flex;
+        transform: translateX(0);
       }
 
       .nav-item {
         width: 100%;
         text-align: center;
       }
+      .nav-item > a.has-arrow::after {
+    content: "›";              /* sağ ok */
+    font-size: 1em;
+    margin-left: 8px;
+  }
 
       .nav-item .dropdown {
-        display: none;
-        position: relative;
+        position: fixed;
+        top: 0;
+        left: 100%;
+        /* başlangıçta sağda */
         width: 100%;
+        height: 100vh;
         background-color: rgb(31, 31, 31);
+        display: flex;
         flex-direction: column;
-        text-align: center;
+        justify-content: center;
+        align-items: center;
+        transition: transform 0.3s ease;
+        padding-top: 100px;
       }
 
       .nav-item.open .dropdown {
-        display: flex;
+    transform: translateX(-100%); /* sola kayarak ekrana gelsin */}
+
+      .nav-item.open>a {
+        display: none;
       }
+
+      /* Ana link gizlensin */
 
       .logo-text .sub-title {
         display: none;
@@ -786,7 +806,7 @@
 
   <script>
 
-     const menuToggle = document.getElementById('menuToggle');
+    const menuToggle = document.getElementById('menuToggle');
     const menuClose = document.getElementById('menuClose');
     const menuBack = document.getElementById('menuBack');
     const navLinks = document.getElementById('navLinks');
@@ -825,43 +845,28 @@
     });
 
 
-    // Dropdown tıklama
     navItems.forEach(item => {
-      const link = item.querySelector('a.has-arrow');
-      const dropdown = item.querySelector('.dropdown');
+  
+  const dropdown = item.querySelector('.dropdown');
 
-      if (link && dropdown) {
-        link.addEventListener('click', e => {
-          e.preventDefault();
+  if (link && dropdown) {
+    link.addEventListener('click', e => {
+      e.preventDefault();
 
-          navItems.forEach(i => i !== item && i.classList.remove('open'));
+      // Tüm dropdownları kapat
+      navItems.forEach(i => i.classList.remove('open'));
 
-          const isOpen = item.classList.contains('open');
+      // Bu dropdownu aç
+      item.classList.add('open');
+      currentDropdown = item;
 
-          if (!isOpen) {
-            item.classList.add('open');
-            currentDropdown = item;
-
-            // İkon durumu
-            menuToggle.style.display = 'none';
-            menuClose.style.display = 'none';
-            menuBack.style.display = 'block';
-          } else {
-            item.classList.remove('open');
-            currentDropdown = null;
-
-            // Menü hâlâ açık mı kontrol et
-            if (navLinks.classList.contains('active')) {
-              menuClose.style.display = 'block';
-            } else {
-              menuToggle.style.display = 'block';
-            }
-            menuBack.style.display = 'none';
-          }
-        });
-      }
+      // Menü ikonları
+      menuToggle.style.display = 'none';
+      menuClose.style.display = 'none';
+      menuBack.style.display = 'block';
     });
-
+  }
+});
 
     // Tooltip kodu
     const continentNamesTR = {
