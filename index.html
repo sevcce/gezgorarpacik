@@ -217,10 +217,16 @@
 }
 
 /* Navbar Mobil Uyumluluk */
+/* Mobil uyumlu navbar */
 @media (max-width: 768px) {
 
-.menu-toggle { display: block; margin-left:auto; }
+/* Hamburger görünür */
+.menu-toggle { 
+  display: block; 
+  margin-left: auto; 
+}
 
+/* Nav-links başlangıçta gizli, hamburger ile aktif olacak */
 .nav-links {
   display: none;
   flex-direction: column;
@@ -230,23 +236,15 @@
   top: 85px;
   left: 0;
   padding: 10px 0;
-  gap: 0;
   z-index: 1000;
 }
 
-.nav-links.active {
-  display: flex;
-}
+.nav-links.active { display: flex; }
 
-.nav-links .nav-item {
-  width: 100%;
-}
+.nav-links .nav-item { width: 100%; }
+.nav-links .nav-item a { padding: 12px 20px; width: 100%; }
 
-.nav-links .nav-item a {
-  padding: 12px 20px;
-  width: 100%;
-}
-
+/* Dropdown açıldığında */
 .nav-item.open .dropdown {
   display: block;
   position: relative;
@@ -256,17 +254,24 @@
   border-radius: 0;
 }
 
-.dropdown a {
-  padding-left: 30px;
+.dropdown a { padding-left: 30px; }
+
+/* Logo ve metin */
+.nav-logo {
+  margin: 0 20px;
 }
 
+/* Sadece SevÖz yazısı görünsün, alt başlık gizlensin */
+.logo-text .sub-title {
+  display: none;
+}
+
+/* Arama kutusu gizle */
 .nav-search {
-  width: 100%;
-  margin: 10px 0;
+  display: none;
+}
 }
 
-.nav-search input { width: 100%; }
-}
 
     
 
