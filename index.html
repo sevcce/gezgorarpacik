@@ -687,9 +687,7 @@ body {
             <div class="nav-logo">
               <a href="index.html" style="display:flex; align-items:center; text-decoration:none; color:inherit;">
                 <img src="WhatsApp Image 2025-09-24 at 15.26.35 3.jpeg" alt="Logo">
-                <div class="logo-text">
-                  <span class="main-title">SevÖz</span>
-                </div>
+                <div class="logo-text"><span class="main-title">SevÖz</span></div>
               </a>
             </div>
             <div class="menu-toggle" id="menuToggle">&#9776;</div>
@@ -736,99 +734,76 @@ body {
           `;
         }
     
-        // Hamburger ve dropdown kontrol
+        // Hamburger menü
         const menuToggle = document.getElementById("menuToggle");
         const navLinks = document.querySelector(".nav-links");
-        const navItems = document.querySelectorAll(".nav-item");
+        if (menuToggle) menuToggle.addEventListener("click", () => navLinks.classList.toggle("active"));
     
-        if (menuToggle) {
-          menuToggle.addEventListener("click", () => {
-            navLinks.classList.toggle("active");
+        // Masaüstü dropdownları için listener ekle
+        if (window.innerWidth > 768) {
+          const navItems = document.querySelectorAll(".nav-item");
+          navItems.forEach(item => {
+            const link = item.querySelector("a");
+            const dropdown = item.querySelector(".dropdown");
+            if (!link || !dropdown) return;
+    
+            link.addEventListener("click", function(e) {
+              e.preventDefault();
+              navItems.forEach(otherItem => {
+                if (otherItem !== item && otherItem.querySelector(".dropdown")) {
+                  otherItem.querySelector(".dropdown").style.display = "none";
+                }
+                otherItem.classList.remove("open");
+              });
+              dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
+            });
           });
         }
     
-        navItems.forEach(item => {
-          const link = item.querySelector("a");
-          const dropdown = item.querySelector(".dropdown");
+        // Tooltip kodu
+        const continentNamesTR = {
+          "asia": "Asya",
+          "europe": "Avrupa",
+          "africa": "Afrika",
+          "north_america": "Kuzey Amerika",
+          "south_america": "Güney Amerika",
+          "australia": "Avustralya",
+          "antarctica": "Antarktika"
+        };
     
-          link.addEventListener("click", function (e) {
-            const isMobile = window.innerWidth <= 768;
+        const tooltip = document.getElementById('tooltip');
+        const continents = document.querySelectorAll('.land');
     
-            if (dropdown) {
-              e.preventDefault();
-    
-              if (isMobile) {
-                item.classList.toggle("open");
-              } else {
-                navItems.forEach(otherItem => {
-                  if (otherItem !== item && otherItem.querySelector(".dropdown")) {
-                    otherItem.querySelector(".dropdown").style.display = "none";
-                  }
-                  otherItem.classList.remove("open");
-                });
-    
-                dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
-              }
-    
-              e.stopPropagation();
+        continents.forEach(continent => {
+          // Click eventi
+          continent.addEventListener('click', () => {
+            if (continent.id === "asia") {
+              window.open("asia-map.html", "_blank"); // Yeni sekmede aç
+            } else {
+              alert((continentNamesTR[continent.id] || continent.id) + " kıtasına tıklandı!");
             }
+          });
+    
+          // Hover tooltip
+          continent.addEventListener('mousemove', (e) => {
+            tooltip.style.left = e.pageX + 10 + 'px';
+            tooltip.style.top = e.pageY + 10 + 'px';
+            tooltip.textContent = continentNamesTR[continent.id] || continent.id;
+            tooltip.style.opacity = 1;
+          });
+    
+          continent.addEventListener('mouseleave', () => {
+            tooltip.style.opacity = 0;
           });
         });
     
-        document.addEventListener("click", () => {
-          if (window.innerWidth > 768) {
-            document.querySelectorAll(".dropdown").forEach(drop => {
-              drop.style.display = "none";
-            });
-          }
-        });
-      }
+      } // buildNavbar sonu
     
-      // Sayfa yüklendiğinde navbar oluştur
       buildNavbar();
-    
-      // Sayfa boyutu değişirse navbar güncelle
       window.addEventListener("resize", buildNavbar);
-    
-      // --- Tooltip kodu ---
-      const continentNamesTR = {
-        "asia": "Asya",
-        "europe": "Avrupa",
-        "africa": "Afrika",
-        "north_america": "Kuzey Amerika",
-        "south_america": "Güney Amerika",
-        "australia": "Avustralya",
-        "antarctica": "Antarktika"
-      };
-    
-      const tooltip = document.getElementById('tooltip');
-      const continents = document.querySelectorAll('.land');
-    
-      continents.forEach(continent => {
-        // Click eventi
-        continent.addEventListener('click', () => {
-          if (continent.id === "asia") {
-            window.open("asia-map.html", "_blank"); // Yeni sekmede aç
-          } else {
-            alert((continentNamesTR[continent.id] || continent.id) + " kıtasına tıklandı!");
-          }
-        });
-    
-        // Hover tooltip
-        continent.addEventListener('mousemove', (e) => {
-          tooltip.style.left = e.pageX + 10 + 'px';
-          tooltip.style.top = e.pageY + 10 + 'px';
-          tooltip.textContent = continentNamesTR[continent.id] || continent.id;
-          tooltip.style.opacity = 1;
-        });
-    
-        continent.addEventListener('mouseleave', () => {
-          tooltip.style.opacity = 0;
-        });
-      });
-    
     });
     </script>
+    
     
     
 </body>
