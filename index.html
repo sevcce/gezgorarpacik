@@ -4,6 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
   <title>GezGorArpacik</title>
 
   <style>
@@ -23,7 +25,7 @@
 
     nav {
       background-color: rgb(31, 31, 31);
-      color: white;
+      color: rgb(202, 200, 200);
       display: flex;
       align-items: center;
       justify-content: flex-start;
@@ -221,96 +223,143 @@
       color: white;
     }
 
-    /* Navbar Mobil Uyumluluk */
-    @media (max-width: 768px) {
+    /* ----- Mobil için Hamburger ----- */
+    .menu-toggle {
+      font-size: 28px;
+      cursor: pointer;
+      display: none;
+    }
+
+    /* Overlay */
+    .overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #0e0e0e;
+  color: #fff;
+  z-index: 2000;
+  flex-direction: column;
+  padding-top: 70px; /* header boşluğu */
+  padding-left: 20px;
+  padding-right: 20px;
+  
+}
+
+    .overlay.active {
+      display: flex;
+    }
+
+    .overlay-header {
+      position: fixed;
+      top: 20px;
+      left: 0;
+      width: 80%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px 20px;
+      border: 1px solid solid rgb(187, 186, 186);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      background: rgb(31, 31, 31);
+    }
+
+    .overlay-header .title {
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    
+
+    .overlay-links {
+      margin-top: 70px;
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      font-size: 20px;
+      margin-left: 30px;
+    }
+
+    .overlay-links a {
+      text-decoration:none;
+      color: rgb(202, 200, 200);
+      font-family: monospace;
+      font-size: 500;
+    }
+
+    @media (max-width: 900px) {
+
+      .nav-links,
+      .nav-search {
+        display: none;
+      }
+
       .menu-toggle {
         display: block;
-      }
-
-      .menu-close,
-      .menu-back {
-        display: none;
-      }
-
-      nav {
-        padding: 0 10px;
-        /* Kenar boşluğunu azalt */
-      }
-
-      .nav-logo {
-        margin-left: 10px;
-        /* Logoyu sola yaklaştır */
         margin-right: 20px;
-        /* Arada biraz boşluk bırak */
       }
-
-      .nav-search {
-        display: none !important;
-      }
-
-      .nav-links {
-        display: none;
-        flex-direction: column;
-        justify-content: start;
-        align-items: center;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100vh;
-        background-color: rgb(31, 31, 31);
-        z-index: 1000;
-        overflow-y: auto;
-        padding-top: 100px;
-        transition: transform 0.3s ease;
-        /* animasyon */
-      }
-
-      .nav-links.active {
-        display: flex;
-        transform: translateX(0);
-      }
-
-      .nav-item {
-        width: 100%;
-        text-align: center;
-      }
-      .nav-item > a.has-arrow::after {
-    content: "›";              /* sağ ok */
-    font-size: 1em;
-    margin-left: 8px;
-  }
-
-      .nav-item .dropdown {
-        position: fixed;
-        top: 0;
-        left: 100%;
-        /* başlangıçta sağda */
-        width: 100%;
-        height: 100vh;
-        background-color: rgb(31, 31, 31);
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        transition: transform 0.3s ease;
-        padding-top: 100px;
-      }
-
-      .nav-item.open .dropdown {
-    transform: translateX(-100%); /* sola kayarak ekrana gelsin */}
-
-      .nav-item.open>a {
-        display: none;
-      }
-
-      /* Ana link gizlensin */
-
-      .logo-text .sub-title {
-        display: none;
-      }
-
     }
+
+    body.menu-open {
+      overflow: hidden;
+    }
+
+    /*overlay-search*/
+    .overlay-search {
+  position: absolute;
+  bottom: 120px; /* ekranın altından boşluk */
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  width: 220px; /* input ile aynı genişlik */
+}
+
+.overlay-search input {
+  width: 100%;
+  padding: 6px 60px 6px 12px; /* sağ tarafta butonlar için boşluk */
+  border-radius: 3px;
+  border: 2px solid rgba(200,200,200,0.5);
+  background-color: #1f1f1f;
+  color: white;
+  font-size: 0.9em;
+  outline: none;
+}
+
+.overlay-search .clear-btn,
+.overlay-search .go-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: rgba(200,200,200,0.9);
+  cursor: pointer;
+  font-size: 1em;
+  padding: 0;
+}
+
+.overlay-search .clear-btn {
+  right: 32px; /* input padding ile aynı */
+  display: none;
+}
+
+.overlay-search .go-btn {
+  right: 10px; /* input padding ile aynı */
+}
+
+
+    .overlay-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1; /* container tüm yüksekliği kaplasın */
+  justify-content: space-between; /* linkler üstte, arama kutusu altta */
+  margin-top: 70px; /* overlay-header kadar boşluk */
+  padding-bottom: 20px;
+}
+
 
     #map-container {
       width: 50%;
@@ -318,6 +367,13 @@
       margin: 0 auto;
       margin-top: 60px;
 
+    }
+    #map-container {
+      flex: 1;
+      /* altta kalan yarısını kapla */
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     svg {
@@ -470,15 +526,6 @@
     }
 
 
-
-    #map-container {
-      flex: 1;
-      /* altta kalan yarısını kapla */
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
     #info-container h4 {
       font-size: 15px;
       /* küçük başlık */
@@ -526,7 +573,7 @@
         padding: 20px;
         padding-left: 20px;
         /* soldaki boşluğu azalt */
-        height: 60%;
+        height: 100vh;
         /* üst kutuyu biraz küçült */
       }
 
@@ -552,6 +599,9 @@
         font-size: 13px;
         line-height: 1.4;
       }
+      .shop-link {
+    display: none; /* Mobilde gizle */
+  }
 
       #map-container {
         height: 40%;
@@ -675,7 +725,7 @@
 
       .about-text p {
         font-size: 14px;
-        text-align: center;
+        text-align: left;
       }
 
       .more-btn {
@@ -700,8 +750,6 @@
     </div>
 
     <div class="menu-toggle" id="menuToggle">&#9776;</div>
-    <div class="menu-close" id="menuClose">&times;</div>
-    <div class="menu-back" id="menuBack">&#8592;</div>
 
     <div class="nav-links" id="navLinks">
       <div class="nav-item"><a href="#" class="nav-link">ANA SAYFA</a></div>
@@ -723,7 +771,47 @@
       <input type="text" id="searchInput" placeholder="Rotanızı arayın" />
       <button class="clear-btn" id="clearBtn">&times;</button>
       <button class="go-btn" id="goBtn">&#8594;</button>
-  </nav>
+    </div>
+    </nav>
+    <!-- Ana Menü Overlay (Mobil) -->
+  <div class="overlay" id="mainMenu">
+    <div class="overlay-header">
+      <div></div>
+      <div class="btn-box" id="closeMain">&times;</div>
+    </div>
+
+    <div class="overlay-content">
+      <div class="overlay-links">
+        <a href="#">ANA SAYFA</a>
+        <a href="#" id="openIstikamet">İSTİKAMET</a>
+        <a href="#">TEMALAR</a>
+        <a href="#">BİZ KİMİZ?</a>
+        <a href="#">İLETİŞİM</a>
+        <a href="#">MAĞAZAMIZ <i class="fas fa-shopping-cart"></i></a>
+      </div>
+      <div class="overlay-search">
+        <input type="text" id="searchInputMobile" placeholder="Rotanızı arayın" />
+        <button class="clear-btn" id="clearBtnMobile">&times;</button>
+        <button class="go-btn" id="goBtnMobile">&#8594;</button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- İstikamet Overlay -->
+  <div class="overlay" id="istikametMenu">
+    <div class="overlay-header">
+      <div class="btn-box" id="backIstikamet">&#8592;</div>
+      <div class="title">İSTİKAMET</div>
+      <div></div>
+    </div>
+    <div class="overlay-links">
+      <a href="#">ASYA</a>
+      <a href="#">AVRUPA</a>
+      <a href="#">TÜRKİYE</a>
+    </div>
+  </div>
+
 
   <div id="main-content">
     <!-- Sol yazı konteynırı -->
@@ -806,67 +894,104 @@
 
   <script>
 
-    const menuToggle = document.getElementById('menuToggle');
-    const menuClose = document.getElementById('menuClose');
-    const menuBack = document.getElementById('menuBack');
-    const navLinks = document.getElementById('navLinks');
-    const navItems = document.querySelectorAll('.nav-item');
+const menuToggle = document.getElementById('menuToggle');
+    const mainMenu = document.getElementById('mainMenu');
+    const closeMain = document.getElementById('closeMain');
+    const openIstikamet = document.getElementById('openIstikamet');
+    const istikametMenu = document.getElementById('istikametMenu');
+    const backIstikamet = document.getElementById('backIstikamet');
 
-    let currentDropdown = null;
-
-    // Menü aç
     menuToggle.addEventListener('click', () => {
-      navLinks.classList.add('active');
-      menuToggle.style.display = 'none';
-      menuClose.style.display = 'block';
-      menuBack.style.display = 'none';
+      mainMenu.classList.add('active');
     });
 
-    // Menü kapat (×)
-    menuClose.addEventListener('click', () => {
-      navLinks.classList.remove('active');
-      menuClose.style.display = 'none';
-      menuToggle.style.display = 'block';
-      menuBack.style.display = 'none';
-      navItems.forEach(item => item.classList.remove('open'));
-      currentDropdown = null;
+    closeMain.addEventListener('click', () => {
+      mainMenu.classList.remove('active');
     });
 
-
-    // Geri butonu (←)
-    menuBack.addEventListener('click', () => {
-      if (currentDropdown) {
-        currentDropdown.classList.remove('open');
-        currentDropdown = null;
-
-        menuBack.style.display = 'none';
-        menuClose.style.display = 'block';
-      }
-    });
-
-
-    navItems.forEach(item => {
-  
-  const dropdown = item.querySelector('.dropdown');
-
-  if (link && dropdown) {
-    link.addEventListener('click', e => {
+    openIstikamet.addEventListener('click', (e) => {
       e.preventDefault();
-
-      // Tüm dropdownları kapat
-      navItems.forEach(i => i.classList.remove('open'));
-
-      // Bu dropdownu aç
-      item.classList.add('open');
-      currentDropdown = item;
-
-      // Menü ikonları
-      menuToggle.style.display = 'none';
-      menuClose.style.display = 'none';
-      menuBack.style.display = 'block';
+      mainMenu.classList.remove('active');
+      istikametMenu.classList.add('active');
     });
-  }
-});
+
+    backIstikamet.addEventListener('click', () => {
+      istikametMenu.classList.remove('active');
+      mainMenu.classList.add('active');
+    });
+
+    const searchInput = document.getElementById('searchInput');
+    const clearBtn = document.getElementById('clearBtn');
+
+    if (searchInput && clearBtn) {
+      searchInput.addEventListener('input', () => {
+        if (searchInput.value.trim() !== "") {
+          clearBtn.style.display = 'block';
+        } else {
+          clearBtn.style.display = 'none';
+        }
+      });
+
+      clearBtn.addEventListener('click', () => {
+        searchInput.value = "";
+        clearBtn.style.display = 'none';
+
+        searchInput.focus();
+      });
+    }
+    const goBtn = document.getElementById('goBtn');
+
+    if (searchInput && clearBtn && goBtn) {
+      searchInput.addEventListener('input', () => {
+        if (searchInput.value.trim() !== "") {
+          clearBtn.style.display = 'block';
+          goBtn.style.display = 'none';
+        } else {
+          clearBtn.style.display = 'none';
+          goBtn.style.display = 'block';
+        }
+      });
+
+      clearBtn.addEventListener('click', () => {
+        searchInput.value = "";
+        clearBtn.style.display = 'none';
+        goBtn.style.display = 'block';
+        searchInput.focus();
+      });
+    }
+    menuToggle.addEventListener('click', () => {
+      mainMenu.classList.add('active');
+      document.body.classList.add('menu-open');
+    });
+
+    closeMain.addEventListener('click', () => {
+      mainMenu.classList.remove('active');
+      document.body.classList.remove('menu-open');
+    });
+
+    //mobil için nav-search
+    const searchInputMobile = document.getElementById('searchInputMobile');
+    const clearBtnMobile = document.getElementById('clearBtnMobile');
+    const goBtnMobile = document.getElementById('goBtnMobile');
+
+    if (searchInputMobile && clearBtnMobile && goBtnMobile) {
+      searchInputMobile.addEventListener('input', () => {
+        if (searchInputMobile.value.trim() !== "") {
+          clearBtnMobile.style.display = 'block';
+          goBtnMobile.style.display = 'none';
+        } else {
+          clearBtnMobile.style.display = 'none';
+          goBtnMobile.style.display = 'block';
+        }
+      });
+
+      clearBtnMobile.addEventListener('click', () => {
+        searchInputMobile.value = "";
+        clearBtnMobile.style.display = 'none';
+        goBtnMobile.style.display = 'block';
+        searchInputMobile.focus();
+      });
+    }
 
     // Tooltip kodu
     const continentNamesTR = {
