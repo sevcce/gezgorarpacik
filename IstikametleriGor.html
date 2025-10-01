@@ -1131,22 +1131,73 @@
             background-color: orange;
         }
 
-        /* Responsive */
-        @media (max-width: 768px) {
-            .contact-container {
-                flex-direction: column;
-                width: 100%;
-                height: auto;
-            }
+        /* Mobil uyum (tablet ve telefon) */
+@media (max-width: 768px) {
+    #contact-section {
+        flex-direction: column;     /* Alt alta gelsin */
+        padding: 20px;             /* Daha dar padding */
+        gap: 20px;
+    }
 
-            .input-row {
-                flex-direction: column;
-            }
+    .contact-container {
+        flex-direction: column;    /* Sol ve sağ sütun alt alta */
+        width: 100%;              /* Taşmayı engelle */
+        height: auto;             /* Sabit yükseklik olmasın */
+        gap: 20px;
+    }
 
-            .contact-right button {
-                align-self: center;
-            }
-        }
+    .contact-left h3 {
+        font-size: 18px;
+    }
+
+    .contact-left p {
+        font-size: 16px;
+    }
+
+    .input-row {
+        flex-direction: column;    /* Yan yana yerine alt alta */
+        gap: 10px;
+    }
+
+    .input-row input {
+        width: 100%;              /* Tam genişlik */
+    }
+
+    .contact-right textarea {
+        height: 200px;            /* Daha küçük textarea */
+    }
+
+    .brand-box {
+        display: flex;
+        align-items: center;
+        justify-content: center;  /* kutu içinde yazıyı ortala */
+        width: 100px;
+        height: 30px;
+        padding: 0;
+        margin: 0;
+        position: relative;
+    }
+
+    .brand-box img {
+        position: absolute;
+        left: 0;   /* logo kenara yapışık */
+        top: 0;
+        width: 40px;
+        height: 30px;
+        object-fit: contain;
+    }
+
+    .brand-box span {
+        flex: 1;               /* kalan alanı kaplasın */
+        text-align: center;    /* kendi alanında ortalansın */
+        z-index: 1;            /* logonun arkasında kalmasın */
+    }
+
+    .contact-right button {
+        width: 100%;              /* Her zaman tam genişlik */
+    }
+}
+
     </style>
 </head>
 
