@@ -29,7 +29,7 @@
       display: flex;
       align-items: center;
       justify-content: flex-start;
-      height: 85px;
+      height: 70px;
       z-index: 1000;
       width: 100%;
       position: relative;
@@ -129,10 +129,8 @@
       left: -30px;
       background-color: rgb(242, 181, 68);
       min-width: 180px;
-      border-radius: 6px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
       z-index: 1;
-      padding: 5px 0;
       text-align: left;
       margin-left: 35px;
     }
@@ -143,10 +141,55 @@
       color: white;
       text-decoration: none;
       font-weight: 500;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .dropdown a:last-child {
+      border-bottom: none;
     }
 
     .dropdown a:hover {
       background-color: rgb(249, 210, 136);
+    }
+
+    .dropdown-sub {
+      display: none;
+      position: absolute;
+      top: 0;
+      /* ASYA linki ile aynı hizada başlar */
+      left: 100%;
+      /* sağa açılır */
+      background-color: rgb(242, 181, 68);
+      min-width: 150px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    /* ASYA alt dropdown linkleri */
+    .dropdown-sub a {
+      display: block;
+      padding: 10px 16px;
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .dropdown-sub a:last-child {
+      border-bottom: none;
+    }
+
+    .dropdown-sub a:hover {
+      background-color: rgb(249, 210, 136);
+    }
+
+    /* ASYA üzerine gelince alt dropdown açılır */
+    .nav-item.has-submenu:hover>.dropdown-sub {
+      display: block;
+    }
+
+    .nav-item.has-submenu {
+      position: relative;
+      /* ASYA'nın alt dropdown'u buna göre konumlanacak */
     }
 
     @media (min-width: 769px) {
@@ -219,6 +262,79 @@
     .nav-search .go-btn:hover {
       color: white;
     }
+
+    .dropdown-sub {
+      display: none;
+      position: absolute;
+      top: 0;
+      /* Ana dropdown ile aynı üst hizada */
+      left: 100%;
+      /* ASYA'nın sağında açılır */
+      background-color: rgb(242, 181, 68);
+      min-width: 180px;
+      /* Ana dropdown ile aynı genişlik */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+      text-align: left;
+      z-index: 1;
+      margin-top: 0;
+    }
+
+
+    .has-submenu:hover .dropdown-sub {
+      display: block;
+    }
+
+    .dropdown-sub a {
+      display: block;
+      padding: 10px 16px;
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .dropdown-sub a:hover {
+      background-color: rgb(249, 210, 136);
+    }
+
+    /* ASYA alt menüsü yan açılır */
+    .nav-item.has-submenu {
+      position: relative;
+    }
+
+    .dropdown-sub {
+      display: none;
+      position: absolute;
+      top: 0;
+      /* ASYA ile aynı hizada */
+      left: 100%;
+      /* ASYA’nın hemen sağında açılır */
+      background-color: rgb(242, 181, 68);
+      min-width: 180px;
+      /* ASYA dropdown ile aynı genişlik */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      z-index: 10;
+    }
+
+    .nav-item.has-submenu:hover .dropdown-sub {
+      display: block;
+    }
+
+    .dropdown-sub a {
+      display: block;
+      padding: 10px 16px;
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+
+
+    .dropdown-sub a:hover {
+      background-color: rgb(249, 210, 136);
+    }
+
 
     /* ----- Mobil için Hamburger ----- */
     .menu-toggle {
@@ -334,42 +450,43 @@
     }
 
     /*overlay-search*/
-    .overlay-search {
-      position: absolute;
-      bottom: 120px;
-      /* ekranın altından boşluk */
-      left: 50%;
+    .overlay-box {
+      position: relative;
+
+
+      left: 47%;
       transform: translateX(-50%);
+      width: 81.5%;
       display: flex;
       align-items: center;
-      width: 220px;
-      /* input ile aynı genişlik */
-
+      justify-content: space-between;
+      padding: 12px 16px;
+      border: 1px solid rgb(187, 186, 186);
+      background: transparent;
+      border-radius: 6px;
+      box-sizing: border-box;
     }
 
     .overlay-search input {
-      width: 100%;
-      padding: 6px 60px 6px 12px;
-      /* sağ tarafta butonlar için boşluk */
-      border-radius: 3px;
-      border: 2px solid rgba(200, 200, 200, 0.5);
-      background-color: #1f1f1f;
-      color: white;
-      font-size: 0.9em;
+      flex: 1;
+      border: none;
+      background: transparent;
+      color: #fff;
+      font-size: 14px;
+      font-family: monospace;
+      letter-spacing: 1px;
       outline: none;
     }
 
+
     .overlay-search .clear-btn,
     .overlay-search .go-btn {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
       background: none;
       border: none;
       color: rgba(200, 200, 200, 0.9);
       cursor: pointer;
-      font-size: 1em;
-      padding: 0;
+      font-size: 18px;
+      margin-left: 10px;
     }
 
     .overlay-search .clear-btn {
@@ -393,8 +510,92 @@
       /* linkler üstte, arama kutusu altta */
       margin-top: 70px;
       /* overlay-header kadar boşluk */
-      padding-bottom: 20px;
+      padding-bottom: 50px;
     }
+
+    /* ----- ASYA Overlay ----- */
+    #asyaMenu {
+      display: none;
+      /* başlangıçta gizli */
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #0e0e0e;
+      color: #fff;
+      z-index: 2000;
+      flex-direction: column;
+      padding-top: 5px;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    #asyaMenu.active {
+      display: flex;
+    }
+
+    #asyaMenu .overlay-header {
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px 20px;
+      border: 1px solid rgb(187, 186, 186);
+      background: transparent;
+      border-radius: 6px;
+    }
+
+    #asyaMenu .overlay-header .title {
+      font-size: 13px;
+      font-weight: 100;
+      font-family: monospace;
+      letter-spacing: 2px;
+    }
+
+    #asyaMenu .overlay-links {
+      margin-top: 150px;
+      /* İSTİKAMET overlay’ine uyumlu */
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      font-size: 20px;
+      margin-left: 30px;
+    }
+
+    #asyaMenu .overlay-links a {
+      text-decoration: none;
+      color: rgb(202, 200, 200);
+      font-family: monospace;
+      font-size: 500;
+      letter-spacing: 2px;
+      transition: color 0.3s ease;
+    }
+
+    #asyaMenu .overlay-links a:hover {
+      color: rgb(242, 181, 68);
+    }
+
+    #asyaMenu .overlay-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      flex: 1;
+      justify-content: flex-start;
+      margin-top: 70px;
+      /* header boşluğu */
+      padding-bottom: 50px;
+    }
+
+    #asyaMenu .overlay-search {
+      margin-top: auto;
+      /* search box’u en alta it */
+    }
+
 
 
     #map-container {
@@ -500,7 +701,7 @@
       position: relative;
       flex: none;
       height: 89%;
-      background: url("web3.jpeg") no-repeat center center;
+      background: url(resimler/web3.jpeg) no-repeat center center;
       background-size: cover;
       color: white;
       padding: 40px;
@@ -602,6 +803,61 @@
       font-family: monospace;
       color: rgba(255, 255, 255, 0.85);
       line-height: 1.6;
+    }
+
+    .destination-box {
+      margin-top: 20px;/* Paragraftan biraz boşluk bırakır */
+      padding: 13px 23px;/* İç boşluk */
+      border: 2px solid white;
+      border-radius: 3px;/* Köşeleri yuvarlatır */
+      background-color: none;
+      color: white;/* Yazı rengi */
+      width: 270px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-family: monospace;
+      letter-spacing: 3px;
+      display: inline-flex; /* Yazı ve ok yan yana olsun */
+      align-items: center;/* Ortaya hizala */
+      justify-content: center;/* Ortaya hizala */
+      gap: 25px;
+      text-decoration: none;
+    }
+
+    .destination-box:hover {
+      background-color: rgb(31, 31, 31);
+      border-color: rgb(31, 31, 31);
+    }
+
+    .destination-arrow {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      border-right: 2px solid white;
+      border-bottom: 2px solid white;
+      transform: rotate(-90deg);
+      /* Güneydoğu yönü */
+      transition: transform 0.3s ease;
+    }
+
+    .destination-box:hover .destination-arrow {
+      transform: rotate(-45deg) translate(2px, 2px);
+      /* Hover efekti için hafif hareket */
+    }
+
+    .destination-arrow::after {
+      content: '';
+      position: absolute;
+      width: 2px;
+      /* Çizgi kalınlığı */
+      height: 14px;
+      /* Ok uzunluğu */
+      background-color: currentColor;
+      left: 50%;
+      top: -2px;
+      transform: translateX(-50%) rotate(-45deg);
+      /* Ok açısı */
     }
 
     /* Mobil uyumlu ayarlar */
@@ -774,6 +1030,8 @@
         padding: 8px 14px;
       }
     }
+
+    
   </style>
 </head>
 
@@ -781,7 +1039,7 @@
 
   <nav id="navbar">
     <div class="nav-logo">
-      <img src="WhatsApp Image 2025-09-24 at 15.26.35 3.jpeg" alt="Logo">
+      <img src="resimler/logo.jpeg" alt="Logo">
       <div class="logo-text">
         <span class="main-title">SevÖz</span>
         <span class="sub-title">Sev Özle Yaşa</span>
@@ -796,7 +1054,13 @@
       <div class="nav-item">
         <a href="#" class="nav-link has-arrow">İSTİKAMET</a>
         <div class="dropdown">
-          <a href="#">ASYA</a>
+          <div class="nav-item has-submenu">
+            <a href="#" class="nav-link">ASYA</a>
+            <div class="dropdown-sub">
+              <a href="#">Tayland</a>
+              <a href="#">Endonezya</a>
+            </div>
+          </div>
           <a href="#">AVRUPA</a>
           <a href="#">TÜRKİYE</a>
         </div>
@@ -812,6 +1076,7 @@
       <button class="go-btn" id="goBtn">&#8594;</button>
     </div>
   </nav>
+
   <!-- Ana Menü Overlay (Mobil) -->
   <div class="overlay" id="mainMenu">
     <div class="overlay-header">
@@ -828,7 +1093,7 @@
         <a href="#">İLETİŞİM</a>
         <a href="#">MAĞAZAMIZ <i class="fas fa-shopping-cart"></i></a>
       </div>
-      <div class="overlay-search">
+      <div class="overlay-search overlay-box">
         <input type="text" id="searchInputMobile" placeholder="Rotanızı arayın" />
         <button class="clear-btn" id="clearBtnMobile">&times;</button>
         <button class="go-btn" id="goBtnMobile">&#8594;</button>
@@ -844,16 +1109,39 @@
       <div class="title">İSTİKAMET</div>
       <div></div>
     </div>
-    <div class="overlay-links">
 
-      <a href="#">ASYA</a>
-      <a href="#">AVRUPA</a>
-      <a href="#">TÜRKİYE</a>
+    <div class="overlay-content">
+      <div class="overlay-links">
+
+        <a href="#" id="openAsya">ASYA</a>
+        <a href="#">AVRUPA</a>
+        <a href="#">TÜRKİYE</a>
+      </div>
+      <div class="overlay-search overlay-box">
+        <input type="text" id="searchInputIstikamet" placeholder="Rotanızı arayın" />
+        <button class="clear-btn" id="clearBtnIstikamet">&times;</button>
+        <button class="go-btn" id="goBtnIstikamet">&#8594;</button>
+      </div>
     </div>
-    <div class="overlay-search">
-      <input type="text" id="searchInputIstikamet" placeholder="Rotanızı arayın" />
-      <button class="clear-btn" id="clearBtnIstikamet">&times;</button>
-      <button class="go-btn" id="goBtnIstikamet">&#8594;</button>
+  </div>
+
+  <div class="overlay" id="asyaMenu">
+    <div class="overlay-header">
+      <div class="btn-box" id="backAsya">&#8592;</div>
+      <div class="title">ASYA</div>
+      <div></div>
+    </div>
+
+    <div class="overlay-content">
+      <div class="overlay-links">
+        <a href="#">Tayland</a>
+        <a href="#">Endonezya</a>
+      </div>
+      <div class="overlay-search overlay-box">
+        <input type="text" id="searchInputAsya" placeholder="Rotanızı arayın" />
+        <button class="clear-btn" id="clearBtnAsya">&times;</button>
+        <button class="go-btn" id="goBtnAsya">&#8594;</button>
+      </div>
     </div>
   </div>
 
@@ -869,6 +1157,12 @@
       <p>İki doğa aşığından sürdürülebilir bir seyahat blogu.
         Dünyayı çevre<br> dostu bir şekilde keşfediyor ve deneyimlerimizi paylaşıyoruz. <br>
         Bu harika yolculukta bize katılın…</p>
+
+        <a href="IstikametleriGor.html" class="destination-box">
+          İstikametleri Gör
+          <span class="destination-arrow"></span>
+        </a>
+
       <a href="https://magazamiz.com" class="shop-link" target="_blank">MAĞAZAMIZ
         <span class="shop-arrow"></span>
       </a>
@@ -876,7 +1170,7 @@
 
     <div id="about-section">
       <div class="about-photo">
-        <img src="aboutus.jpeg" alt="Biz Kimiz">
+        <img src="resimler/aboutus.jpeg" alt="Biz Kimiz">
       </div>
       <div class="about-text">
         <h4>KİMDİR BU </h4>
@@ -1038,6 +1332,70 @@
       });
     }
 
+    // İstikamet için nav-search
+    const searchInputIstikamet = document.getElementById('searchInputIstikamet');
+    const clearBtnIstikamet = document.getElementById('clearBtnIstikamet');
+    const goBtnIstikamet = document.getElementById('goBtnIstikamet');
+
+    if (searchInputIstikamet && clearBtnIstikamet && goBtnIstikamet) {
+      searchInputIstikamet.addEventListener('input', () => {
+        if (searchInputIstikamet.value.trim() !== "") {
+          clearBtnIstikamet.style.display = 'block';
+          goBtnIstikamet.style.display = 'none';
+        } else {
+          clearBtnIstikamet.style.display = 'none';
+          goBtnIstikamet.style.display = 'block';
+        }
+      });
+
+      clearBtnIstikamet.addEventListener('click', () => {
+        searchInputIstikamet.value = "";
+        clearBtnIstikamet.style.display = 'none';
+        goBtnIstikamet.style.display = 'block';
+        searchInputIstikamet.focus();
+      });
+    }
+
+    const openAsya = document.getElementById('openAsya');
+    const asyaMenu = document.getElementById('asyaMenu');
+    const backAsya = document.getElementById('backAsya');
+
+    openAsya.addEventListener('click', (e) => {
+      e.preventDefault();
+      istikametMenu.classList.remove('active'); // İSTİKAMET overlay gizle
+      asyaMenu.classList.add('active');         // ASYA overlay göster
+    });
+
+    backAsya.addEventListener('click', () => {
+      asyaMenu.classList.remove('active');      // ASYA overlay gizle
+      istikametMenu.classList.add('active');    // İSTİKAMET overlay göster
+    });
+
+    // ASYA Overlay Search Box
+    const searchInputAsya = document.getElementById('searchInputAsya');
+    const clearBtnAsya = document.getElementById('clearBtnAsya');
+    const goBtnAsya = document.getElementById('goBtnAsya');
+
+    if (searchInputAsya && clearBtnAsya && goBtnAsya) {
+      searchInputAsya.addEventListener('input', () => {
+        if (searchInputAsya.value.trim() !== "") {
+          clearBtnAsya.style.display = 'block';
+          goBtnAsya.style.display = 'none';
+        } else {
+          clearBtnAsya.style.display = 'none';
+          goBtnAsya.style.display = 'block';
+        }
+      });
+
+      clearBtnAsya.addEventListener('click', () => {
+        searchInputAsya.value = "";
+        clearBtnAsya.style.display = 'none';
+        goBtnAsya.style.display = 'block';
+        searchInputAsya.focus();
+      });
+    }
+
+
     // Tooltip kodu
     const continentNamesTR = {
       "asia": "Asya",
@@ -1074,6 +1432,7 @@
         tooltip.style.opacity = 0;
       });
     });
+
 
 
   </script>
