@@ -595,6 +595,15 @@
       margin-top: auto;
       /* search box’u en alta it */
     }
+    .nav-logo {
+  text-decoration: none; /* alt çizgiyi kaldır */
+  border: none;          /* varsa border kaldır */
+  color: inherit;        /* renk navbar ile uyumlu */
+}
+
+.nav-logo:hover {
+  text-decoration: none; /* hover'da da çizgi olmasın */
+}
 
 
 
@@ -1038,13 +1047,13 @@
 <body>
 
   <nav id="navbar">
-    <div class="nav-logo">
+    <a href="index.html" class="nav-logo">
       <img src="resimler/logo.jpeg" alt="Logo">
       <div class="logo-text">
         <span class="main-title">SevÖz</span>
         <span class="sub-title">Sev Özle Yaşa</span>
       </div>
-    </div>
+    </a>
 
     <div class="menu-toggle" id="menuToggle">&#9776;</div>
 
