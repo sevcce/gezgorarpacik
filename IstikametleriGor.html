@@ -594,6 +594,16 @@
             /* search box’u en alta it */
         }
 
+        .nav-logo {
+  text-decoration: none; /* alt çizgiyi kaldır */
+  border: none;          /* varsa border kaldır */
+  color: inherit;        /* renk navbar ile uyumlu */
+}
+
+.nav-logo:hover {
+  text-decoration: none; /* hover'da da çizgi olmasın */
+}
+
 
 
         #main-content {
@@ -982,17 +992,19 @@
 
         /* brand-box */
         .brand-box {
-            display: flex;
-            align-items: center;
-            justify-content: flex-start;
-            padding: 0;
-            gap: 0;
-            border: 2px solid #CAC8C8;
-            height: 30px;
-            width: 100px;
-            border-radius: 2px;
-            background: transparent;
-        }
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* masaüstü: yazı solda */
+    width: 100px;                /* mevcut kutu genişliği */
+    height: 30px;                /* mevcut kutu yüksekliği */
+    border: 2px solid #CAC8C8;
+    border-radius: 2px;
+    background: transparent;
+    text-decoration: none;       /* alt çizgi olmasın */
+    color: rgb(202, 200, 200);   /* yazı rengi */
+    cursor: pointer;             /* fare pointer olsun */
+}
+
 
 
         .brand-box img {
@@ -1205,13 +1217,13 @@
 <body>
 
     <nav id="navbar">
-        <div class="nav-logo">
+        <a href="index.html" class="nav-logo">
             <img src="resimler/logo.jpeg" alt="Logo">
             <div class="logo-text">
-                <span class="main-title">SevÖz</span>
-                <span class="sub-title">Sev Özle Yaşa</span>
+              <span class="main-title">SevÖz</span>
+              <span class="sub-title">Sev Özle Yaşa</span>
             </div>
-        </div>
+          </a>
 
         <div class="menu-toggle" id="menuToggle">&#9776;</div>
 
@@ -1405,10 +1417,10 @@
 
             <footer id="contact-section">
                 <!-- Sol kutu -->
-                <div class="brand-box">
+                <a href="index.html" class="brand-box">
                     <img src="resimler/logo.jpeg" alt="Logo">
-                    <a href="index.html">SevÖz</a>
-                </div>
+                    <span>SevÖz</span>
+                </a>
 
                 <div class="contact-container">
                     <!-- Sol sütun -->
