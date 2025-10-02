@@ -1172,24 +1172,44 @@
 
 /* Mobil uyumluluk */
 @media (max-width: 768px) {
-  .team-member,
+  #team-section {
+    padding: 40px 20px; /* yanlardan daralt */
+    gap: 40px;
+  }
+
+  .team-member {
+    flex-direction: column;   /* alt alta gelsin */
+    align-items: center;      /* ortala */
+    margin-bottom: 80px;      /* alt boşluk biraz azalt */
+    gap: 30px;
+  }
+
   .team-member.reverse {
-    flex-direction: column;  
-    text-align: center;
+    flex-direction: column;   /* ters yön de alt alta gelsin */
   }
 
   .member-photo img {
-    width: 70%;
-    margin: 0 auto;
+    width: 80%;               /* ekranın %80’i */
+    max-width: 300px;         /* çok büyük olmasın */
+    margin: 0 auto;           /* ortala */
   }
 
   .member-text {
-    margin-top: 20px;
-    padding: 0 15px;
-    align-items: center;   /* mobilde yazı ortalanır */
-    text-align: center;
+    padding: 20px;            /* içerik kutusu daralsın */
+    text-align: center;       /* yazılar ortalansın */
+    align-items: center;
+  }
+
+  .member-text h3 {
+    font-size: 18px;
+  }
+
+  .member-text p {
+    font-size: 14px;
+    line-height: 1.5;
   }
 }
+
 
 .section-divider {
             border: 0;
