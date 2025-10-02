@@ -1111,352 +1111,384 @@
     }
 
     #team-section {
-  display: flex;
-  flex-direction: column;
-  gap: 60px;
-  padding: 60px 120px;
-  background-color: rgb(24,24,24);
-}
+      display: flex;
+      flex-direction: column;
+      gap: 60px;
+      padding: 60px 120px;
+      background-color: rgb(24, 24, 24);
+    }
 
-/* Container */
-.team-member {
-  display: flex;
-  align-items: center;  /* foto ve yazı aynı hizada */
-  gap: 20px;            /* foto ile yazı arası boşluk */
-  margin-bottom: 150px;
-}
+    /* Container */
+    .team-member {
+      display: flex;
+      align-items: center;
+      /* foto ve yazı aynı hizada */
+      gap: 20px;
+      /* foto ile yazı arası boşluk */
+      margin-bottom: 150px;
+    }
 
-.team-member.reverse {
-  flex-direction: row-reverse; /* alt container ters yön */
-}
+    .team-member.reverse {
+      flex-direction: row-reverse;
+      /* alt container ters yön */
+    }
 
-.member-photo,
-.member-text {
-  flex: 1;          
-  min-width: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center; /* dikey ortala */
-}
+    .member-photo,
+    .member-text {
+      flex: 1;
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      /* dikey ortala */
+    }
 
-/* Kare foto */
-.member-photo img {
-  width: 500px;          /* artık büyük değil */
-  aspect-ratio: 1 / 1;   
-  object-fit: cover;     
-  
-}
+    /* Kare foto */
+    .member-photo img {
+      width: 500px;
+      /* artık büyük değil */
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
 
-/* Metin */
-.member-text {
-  color: rgba(245,245,245,0.95);
-  font-family: monospace;
-  padding: 40px 60px; 
-  display: flex;
-  flex-direction: column;
-  justify-content: center;  
-  align-items: flex-start;  
-  text-align: left;  
-}
+    }
 
-.member-text h3 {
-  font-size: 22px;
-  margin-bottom: 10px;
-  color: orange;
-}
+    /* Metin */
+    .member-text {
+      color: rgba(245, 245, 245, 0.95);
+      font-family: monospace;
+      padding: 40px 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      text-align: left;
+    }
 
-.member-text p {
-  font-size: 16px;
-  line-height: 1.6;
-}
+    .member-text h3 {
+      font-size: 22px;
+      margin-bottom: 10px;
+      color: orange;
+    }
 
-/* Mobil uyumluluk */
-@media (max-width: 768px) {
-  #team-section {
-    padding: 40px 20px; /* yanlardan daralt */
-    gap: 40px;
-  }
+    .member-text p {
+      font-size: 16px;
+      line-height: 1.6;
+    }
 
-  .team-member {
-    flex-direction: column;   /* alt alta gelsin */
-    align-items: center;      /* ortala */
-    margin-bottom: 80px;      /* alt boşluk biraz azalt */
-    gap: 30px;
-  }
+    /* Mobil uyumluluk */
+    @media (max-width: 768px) {
+      #team-section {
+        padding: 40px 20px;
+        /* yanlardan daralt */
+        gap: 40px;
+      }
 
-  .team-member.reverse {
-    flex-direction: column;   /* ters yön de alt alta gelsin */
-  }
+      .team-member {
+        flex-direction: column;
+        /* alt alta gelsin */
+        align-items: center;
+        /* ortala */
+        margin-bottom: 80px;
+        /* alt boşluk biraz azalt */
+        gap: 30px;
+      }
 
-  .member-photo img {
-    width: 80%;               /* ekranın %80’i */
-    max-width: 300px;         /* çok büyük olmasın */
-    margin: 0 auto;           /* ortala */
-  }
+      .team-member.reverse {
+        flex-direction: column;
+        /* ters yön de alt alta gelsin */
+      }
 
-  .member-text {
-    padding: 20px;            /* içerik kutusu daralsın */
-    text-align: center;       /* yazılar ortalansın */
-    align-items: center;
-  }
+      .member-photo img {
+        width: 80%;
+        /* ekranın %80’i */
+        max-width: 300px;
+        /* çok büyük olmasın */
+        margin: 0 auto;
+        /* ortala */
+      }
 
-  .member-text h3 {
-    font-size: 18px;
-  }
+      .member-text {
+        padding: 20px;
+        /* içerik kutusu daralsın */
+        text-align: center;
+        /* yazılar ortalansın */
+        align-items: center;
+      }
 
-  .member-text p {
-    font-size: 14px;
-    line-height: 1.5;
-  }
-}
+      .member-text h3 {
+        font-size: 18px;
+      }
 
-
-.section-divider {
-            border: 0;
-            height: 0.5px;
-            background: rgba(200, 200, 200, 0.9);
-            margin: 100px 0;
-            width: 100vw;
-            position: relative;
-            left: 50%;
-            right: 50%;
-            transform: translateX(-50%);
-            margin-bottom: 20px;
-        }
-
-        #contact-section {
-            display: flex;
-            justify-content: space-between;
-            /* Sol ve sağ kutuları ayırır */
-            align-items: flex-start;
-            gap: 20px;
-            padding: 40px 50px;
-            flex-wrap: wrap;
-            /* Küçük ekranlarda alt alta geçmesini sağlar */
-        }
-
-        /* brand-box */
-        .brand-box {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start; /* masaüstü: yazı solda */
-    width: 100px;                /* mevcut kutu genişliği */
-    height: 30px;                /* mevcut kutu yüksekliği */
-    border: 2px solid #CAC8C8;
-    border-radius: 2px;
-    background: transparent;
-    text-decoration: none;       /* alt çizgi olmasın */
-    color: rgb(202, 200, 200);   /* yazı rengi */
-    cursor: pointer;             /* fare pointer olsun */
-}
+      .member-text p {
+        font-size: 14px;
+        line-height: 1.5;
+      }
+    }
 
 
+    .section-divider {
+      border: 0;
+      height: 0.5px;
+      background: rgba(200, 200, 200, 0.9);
+      margin: 100px 0;
+      width: 100vw;
+      position: relative;
+      left: 50%;
+      right: 50%;
+      transform: translateX(-50%);
+      margin-bottom: 20px;
+    }
 
-        .brand-box img {
-            display: block;
-            width: 40px;
-            height: 30px;
-            object-fit: contain;
-            object-position: left center;
-            margin: 0;
-            padding: 0;
-            border: 0;
-        }
-
-        .brand-box span {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 15px;
-            font-weight: 500;
-            color: rgb(202, 200, 200);
-            margin-left: -5px;
-        }
-
-        .brand-box a,
-        .brand-box a:visited,
-        .brand-box a:hover,
-        .brand-box a:active {
-            color: rgb(202, 200, 200);
-            /* hep aynı renk */
-            text-decoration: none;
-            /* alt çizgi yok */
-        }
-
-        .contact-container {
-            display: flex;
-            justify-content: space-between;
-            gap: 50px;
-            padding: 5px;
-            width: 900px;
-            /* Kareye yakın */
-            height: 400px;
-            box-sizing: border-box;
-        }
-
-        /* Sol sütun */
-        .contact-left {
-            flex: 1;
-            color: #eaeaea;
-
-        }
-
-        .contact-left h3 {
-            color: rgb(202, 200, 200);
-            margin-bottom: 25px;
-            margin-top: 5px;
-            font-family: monospace;
-            letter-spacing: 2px;
-            font-size: 20px;
-        }
-
-        .contact-left p {
-            margin-bottom: 25px;
-            font-family: monospace;
-            line-height: 1.6;
-            font-size: 18px;
-            color: rgb(202, 200, 200);
-
-        }
-
-        .contact-info p {
-            margin: 5px 0;
-            color: rgb(202, 200, 200);
-            line-height: 20px;
-        }
-
-        /* Sağ sütun */
-        .contact-right {
-            flex: 1;
-        }
-
-        .contact-right form {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            height: 100%;
-        }
-
-        /* İsim ve email yan yana */
-        .input-row {
-            display: flex;
-            gap: 10px;
-        }
-
-        .input-row input {
-            flex: 1;
-            padding: 10px;
-            border: 1px solid rgb(202, 200, 200);
-            background-color: transparent;
-            color: rgb(202, 200, 200);
-            border-radius: 2px;
-            outline: none;
-            box-sizing: border-box;
-            font-family: monospace;
-        }
-
-        /* Mesaj kutusu */
-        .contact-right textarea {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid rgb(202, 200, 200);
-            border-radius: 2px;
-            background-color: transparent;
-            color: rgb(202, 200, 200);
-            resize: none;
-            outline: none;
-            box-sizing: border-box;
-            height: 300px;
-            font-family: monospace;
-        }
-
-        /* Gönder butonu */
-        .contact-right button {
-            padding: 10px 20px;
-            border: 1px solid #eaeaea;
-            border-radius: 2px;
-            background-color: transparent;
-            color: rgb(202, 200, 200);
-            font-weight: bold;
-            cursor: pointer;
-            align-self: flex-end;
-            width: 100%;
-            /* Mesaj kutusu genişliğine eşit */
-            box-sizing: border-box;
-            /* Padding dahil genişlik */
-        }
-
-        .contact-right button:hover {
-            background-color: orange;
-        }
-
-        /* Mobil uyum (tablet ve telefon) */
-@media (max-width: 768px) {
     #contact-section {
-        flex-direction: column;     /* Alt alta gelsin */
-        padding: 20px;             /* Daha dar padding */
-        gap: 20px;
+      display: flex;
+      justify-content: space-between;
+      /* Sol ve sağ kutuları ayırır */
+      align-items: flex-start;
+      gap: 20px;
+      padding: 40px 50px;
+      flex-wrap: wrap;
+      /* Küçük ekranlarda alt alta geçmesini sağlar */
+    }
+
+    /* brand-box */
+    .brand-box {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      /* masaüstü: yazı solda */
+      width: 100px;
+      /* mevcut kutu genişliği */
+      height: 30px;
+      /* mevcut kutu yüksekliği */
+      border: 2px solid #CAC8C8;
+      border-radius: 2px;
+      background: transparent;
+      text-decoration: none;
+      /* alt çizgi olmasın */
+      color: rgb(202, 200, 200);
+      /* yazı rengi */
+      cursor: pointer;
+      /* fare pointer olsun */
+    }
+
+
+
+    .brand-box img {
+      display: block;
+      width: 40px;
+      height: 30px;
+      object-fit: contain;
+      object-position: left center;
+      margin: 0;
+      padding: 0;
+      border: 0;
+    }
+
+    .brand-box span {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 15px;
+      font-weight: 500;
+      color: rgb(202, 200, 200);
+      margin-left: -5px;
+    }
+
+    .brand-box a,
+    .brand-box a:visited,
+    .brand-box a:hover,
+    .brand-box a:active {
+      color: rgb(202, 200, 200);
+      /* hep aynı renk */
+      text-decoration: none;
+      /* alt çizgi yok */
     }
 
     .contact-container {
-        flex-direction: column;    /* Sol ve sağ sütun alt alta */
-        width: 100%;              /* Taşmayı engelle */
-        height: auto;             /* Sabit yükseklik olmasın */
-        gap: 20px;
+      display: flex;
+      justify-content: space-between;
+      gap: 50px;
+      padding: 5px;
+      width: 900px;
+      /* Kareye yakın */
+      height: 400px;
+      box-sizing: border-box;
+    }
+
+    /* Sol sütun */
+    .contact-left {
+      flex: 1;
+      color: #eaeaea;
+
     }
 
     .contact-left h3 {
-        font-size: 18px;
+      color: rgb(202, 200, 200);
+      margin-bottom: 25px;
+      margin-top: 5px;
+      font-family: monospace;
+      letter-spacing: 2px;
+      font-size: 20px;
     }
 
     .contact-left p {
-        font-size: 16px;
+      margin-bottom: 25px;
+      font-family: monospace;
+      line-height: 1.6;
+      font-size: 18px;
+      color: rgb(202, 200, 200);
+
     }
 
+    .contact-info p {
+      margin: 5px 0;
+      color: rgb(202, 200, 200);
+      line-height: 20px;
+    }
+
+    /* Sağ sütun */
+    .contact-right {
+      flex: 1;
+    }
+
+    .contact-right form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      height: 100%;
+    }
+
+    /* İsim ve email yan yana */
     .input-row {
-        flex-direction: column;    /* Yan yana yerine alt alta */
-        gap: 10px;
+      display: flex;
+      gap: 10px;
     }
 
     .input-row input {
-        width: 100%;              /* Tam genişlik */
+      flex: 1;
+      padding: 10px;
+      border: 1px solid rgb(202, 200, 200);
+      background-color: transparent;
+      color: rgb(202, 200, 200);
+      border-radius: 2px;
+      outline: none;
+      box-sizing: border-box;
+      font-family: monospace;
     }
 
+    /* Mesaj kutusu */
     .contact-right textarea {
-        height: 200px;            /* Daha küçük textarea */
+      width: 100%;
+      padding: 10px;
+      border: 1px solid rgb(202, 200, 200);
+      border-radius: 2px;
+      background-color: transparent;
+      color: rgb(202, 200, 200);
+      resize: none;
+      outline: none;
+      box-sizing: border-box;
+      height: 300px;
+      font-family: monospace;
     }
 
-    .brand-box {
+    /* Gönder butonu */
+    .contact-right button {
+      padding: 10px 20px;
+      border: 1px solid #eaeaea;
+      border-radius: 2px;
+      background-color: transparent;
+      color: rgb(202, 200, 200);
+      font-weight: bold;
+      cursor: pointer;
+      align-self: flex-end;
+      width: 100%;
+      /* Mesaj kutusu genişliğine eşit */
+      box-sizing: border-box;
+      /* Padding dahil genişlik */
+    }
+
+    .contact-right button:hover {
+      background-color: orange;
+    }
+
+    /* Mobil uyum (tablet ve telefon) */
+    @media (max-width: 768px) {
+      #contact-section {
+        flex-direction: column;
+        /* Alt alta gelsin */
+        padding: 20px;
+        /* Daha dar padding */
+        gap: 20px;
+      }
+
+      .contact-container {
+        flex-direction: column;
+        /* Sol ve sağ sütun alt alta */
+        width: 100%;
+        /* Taşmayı engelle */
+        height: auto;
+        /* Sabit yükseklik olmasın */
+        gap: 20px;
+      }
+
+      .contact-left h3 {
+        font-size: 18px;
+      }
+
+      .contact-left p {
+        font-size: 16px;
+      }
+
+      .input-row {
+        flex-direction: column;
+        /* Yan yana yerine alt alta */
+        gap: 10px;
+      }
+
+      .input-row input {
+        width: 100%;
+        /* Tam genişlik */
+      }
+
+      .contact-right textarea {
+        height: 200px;
+        /* Daha küçük textarea */
+      }
+
+      .brand-box {
         display: flex;
         align-items: center;
-        justify-content: center;  /* kutu içinde yazıyı ortala */
+        justify-content: center;
+        /* kutu içinde yazıyı ortala */
         width: 100px;
         height: 30px;
         padding: 0;
         margin: 0;
         position: relative;
-    }
+      }
 
-    .brand-box img {
+      .brand-box img {
         position: absolute;
-        left: 0;   /* logo kenara yapışık */
+        left: 0;
+        /* logo kenara yapışık */
         top: 0;
         width: 40px;
         height: 30px;
         object-fit: contain;
+      }
+
+      .brand-box span {
+        flex: 1;
+        /* kalan alanı kaplasın */
+        text-align: center;
+        /* kendi alanında ortalansın */
+        z-index: 1;
+        /* logonun arkasında kalmasın */
+      }
+
+      .contact-right button {
+        width: 100%;
+        /* Her zaman tam genişlik */
+      }
     }
-
-    .brand-box span {
-        flex: 1;               /* kalan alanı kaplasın */
-        text-align: center;    /* kendi alanında ortalansın */
-        z-index: 1;            /* logonun arkasında kalmasın */
-    }
-
-    .contact-right button {
-        width: 100%;              /* Her zaman tam genişlik */
-    }
-}
-
-
-
   </style>
 </head>
 
@@ -1617,8 +1649,8 @@
         <p>Merhaba! Biz Sevcan ve Özge, Türkiye’den iki seyahat ve doğa tutkunu. Çocukluk hayallerimiz
           dünyayı keşfetmek, farklı kültürleri tanımak ve doğayla uyum içinde yaşamak üzerine kuruluydu.
           <br>
-          Yıllar geçtikçe, bize öğretilen çok çalış, iyi bir iş bul, sağlam bir gelecek kur döngüsünün ruhumuzu
-          beslemediğini fark ettik. <br>İçimizde hep bir boşluk vardı. <br><br>
+          Zamanla fark ettik ki, hayatın sadece planlardan ve beklentilerden ibaret olduğunu düşünmek, ruhumuzu tam
+          anlamıyla beslemiyor; <br>hepimizde bir boşluk kalabiliyor. <br><br>
           <!-- Hayatın sadece çalışmak ve rutinlerden ibaret olmadığını anladık. İçimizde hep daha fazlasını arayan bir yan vardı.-->
 
           <span class="symbolized">
@@ -1627,7 +1659,7 @@
 
           <br><br>
           Biz de durmuyoruz! Macerayı, doğayı ve özgürlüğü
-          hayatımızın merkezine alıp, hayallerimizi gerçeğe dönüştürmeye bir adım daha yaklaşıyoruz.
+          hayatımızın merkezine alarak, hayallerimizi gerçeğe dönüştürmeye bir adım daha yaklaşıyoruz.
         </p>
       </div>
     </div>
@@ -1660,45 +1692,45 @@
 
       <hr class="section-divider">
 
-            <footer id="contact-section">
-                <!-- Sol kutu -->
-                <a href="index.html" class="brand-box">
-                    <img src="resimler/logo.jpeg" alt="Logo">
-                    <span>SevÖz</span>
-                </a>
+      <footer id="contact-section">
+        <!-- Sol kutu -->
+        <a href="index.html" class="brand-box">
+          <img src="resimler/logo.jpeg" alt="Logo">
+          <span>SevÖz</span>
+        </a>
 
-                <div class="contact-container">
-                    <!-- Sol sütun -->
-                    <div class="contact-left">
-                        <h3>Bizimle Konuşun</h3>
-                        <p>Blogumuzu ziyaret ettiğiniz için teşekkür ederiz, sizden haber almak isteriz. Size nasıl
-                            yardımcı olabiliriz? Bu iletişim formunu veya bu sayfadaki doğrudan iletişim bilgilerini
-                            kullanabilirsiniz.</p>
-                        <div class="contact-info">
-                            <p>Email: info@sevoz.com</p>
-                            <p>Telefon: +90 123 456 78 90</p>
-                            <p>Adres: İstanbul, Türkiye</p>
-                        </div>
-                    </div>
+        <div class="contact-container">
+          <!-- Sol sütun -->
+          <div class="contact-left">
+            <h3>Bizimle Konuşun</h3>
+            <p>Blogumuzu ziyaret ettiğiniz için teşekkür ederiz, sizden haber almak isteriz. Size nasıl
+              yardımcı olabiliriz? Bu iletişim formunu veya bu sayfadaki doğrudan iletişim bilgilerini
+              kullanabilirsiniz.</p>
+            <div class="contact-info">
+              <p>Email: info@sevoz.com</p>
+              <p>Telefon: +90 123 456 78 90</p>
+              <p>Adres: İstanbul, Türkiye</p>
+            </div>
+          </div>
 
-                    <!-- Sağ sütun -->
-                    <div class="contact-right">
-                        <form>
-                            <div class="input-row">
-                                <input type="text" placeholder="Adınız">
-                                <input type="email" placeholder="Email adresiniz">
-                            </div>
-                            <textarea placeholder="Mesajınızı yazın"></textarea>
-                            <button type="submit">Gönder</button>
-                        </form>
-                    </div>
-                </div>
+          <!-- Sağ sütun -->
+          <div class="contact-right">
+            <form>
+              <div class="input-row">
+                <input type="text" placeholder="Adınız">
+                <input type="email" placeholder="Email adresiniz">
+              </div>
+              <textarea placeholder="Mesajınızı yazın"></textarea>
+              <button type="submit">Gönder</button>
+            </form>
+          </div>
+        </div>
 
 
-            </footer>
-            <p style="color: #777; text-align: center; margin-top: 20px;">
-                © 2025 SevÖz. Tüm hakları saklıdır.
-            </p>
+      </footer>
+      <p style="color: #777; text-align: center; margin-top: 20px;">
+        © 2025 SevÖz. Tüm hakları saklıdır.
+      </p>
 
     </div>
 
@@ -1869,20 +1901,20 @@
     }
 
     document.querySelector('.destination-box').addEventListener('click', function (e) {
-            e.preventDefault(); // Linkin anında atlamasını engeller
-            document.querySelector('#about-section').scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        });
+      e.preventDefault(); // Linkin anında atlamasını engeller
+      document.querySelector('#about-section').scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    });
 
-        document.querySelector('.more-btn ').addEventListener('click', function (e) {
-            e.preventDefault(); // Linkin anında atlamasını engeller
-            document.querySelector('#dual-section').scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        });
+    document.querySelector('.more-btn ').addEventListener('click', function (e) {
+      e.preventDefault(); // Linkin anında atlamasını engeller
+      document.querySelector('#dual-section').scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    });
 
   </script>
 
