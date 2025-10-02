@@ -1101,7 +1101,7 @@
         <a href="#">ANA SAYFA</a>
         <a href="#" id="openIstikamet">İSTİKAMET</a>
         <a href="#">TEMALAR</a>
-        <a href="#">BİZ KİMİZ?</a>
+        <a href="#" id="openBizKimiz">BİZ KİMİZ?</a>
         <a href="#">İLETİŞİM</a>
         <a href="#">MAĞAZAMIZ <i class="fas fa-shopping-cart"></i></a>
       </div>
@@ -1444,6 +1444,13 @@
         tooltip.style.opacity = 0;
       });
     });
+
+    document.getElementById("openBizKimiz").addEventListener("click", function(e) {
+  e.preventDefault(); // href="#" sayfayı yenilemesin
+  document.getElementById("mainMenu").style.display = "none"; // menüyü kapat
+  window.location.href = "aboutus.html"; // yönlendir
+});
+
 
 
 
