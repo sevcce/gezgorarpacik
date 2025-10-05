@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <title>Tayland</title>
 
     <style>
@@ -131,6 +132,7 @@
             z-index: 1;
             text-align: left;
             margin-left: 35px;
+            transition: all 0.5s ease-in-out;
         }
 
         .dropdown a {
@@ -160,6 +162,7 @@
             background-color: rgb(242, 181, 68);
             min-width: 150px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: all 0.5s ease-in-out;
         }
 
         /* ASYA alt dropdown linkleri */
@@ -608,6 +611,39 @@
             /* hover'da da çizgi olmasın */
         }
 
+        .istikamet-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.plus-btn {
+  font-size: 22px;
+  cursor: pointer;
+  padding: 0 75px;
+  color: rgb(202, 200, 200);
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.plus-btn:hover {
+  transform: scale(1.2);
+  color: rgb(242, 181, 68); /* hover rengi */
+}
+
+.temalar-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.asya-item,
+.avrupa-item,
+.turkiye-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
         .top-menu {
             position: absolute;
             top: 40px;
@@ -755,7 +791,7 @@
         }
 
         .shop-link {
-            position: absolute;
+            position: fixed;
             right: 60px;
             /* sağdan boşluk */
             top: 50%;
@@ -885,100 +921,124 @@
         }
 
         .destination-card {
-    flex: 1;
-    height: 600px;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    box-shadow: 0 4px 12px ;
-    transition: transform 0.3s ease;
-    background: rgb(24, 24, 24); 
-}
+            flex: 1;
+            height: 600px;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            box-shadow: 0 4px 12px;
+            transition: transform 0.3s ease;
+            background: rgb(24, 24, 24);
+        }
 
-.destination-card img {
-    width: 100%;
-    height: 50%;   /* kartın üst yarısı */
-    object-fit: cover;
-    flex-shrink: 0;
-    transition: transform 0.4s ease;
-}
-.destination-card:hover img {
-    animation: bounce 1s infinite ease-in-out;
-}
-@keyframes bounce {
-    0%   { transform: translateY(0); }
-    50%  { transform: translateY(-5px); } /* yukarı zıplama */
-    100% { transform: translateY(0); }     /* geri başlangıca dön */
-}
+        .destination-card img {
+            width: 100%;
+            height: 50%;
+            /* kartın üst yarısı */
+            object-fit: cover;
+            flex-shrink: 0;
+            transition: transform 0.4s ease;
+        }
 
-.card-content {
-    flex: 1;              /* kalan yarıyı kaplasın */
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start; /* soldan hizala */
-    justify-content: flex-start; /* yukarıdan başla */
-    padding: 40px 20px 20px 40px;
-    background: rgb(24, 24, 24);
-    color: #000;
-    text-align: left;
-    position: relative;
-}
+        .destination-card:hover img {
+            animation: bounce 1s infinite ease-in-out;
+        }
 
-.card-content h3 {
-    margin: 0 0 15px 0;
-    font-size: 22px;
-    font-family:'Courier New', Courier, monospace;
-    font-weight: 550;
-    color: rgba(255, 255, 255, 0.863);
-    
-}
+        @keyframes bounce {
+            0% {
+                transform: translateY(0);
+            }
 
-.card-content p {
-    font-size: 15px;
-    color: rgba(255, 255, 255, 0.899);
-    font-family:'Courier New', Courier, monospace;
-    margin: 0 0 15px 0; /* altta butondan boşluk */
-    line-height: 1.4;
-    letter-spacing: 1px;
-}
+            50% {
+                transform: translateY(-5px);
+            }
 
-.post-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 30px;
-    color: rgba(255,255,255,0.6);
-    font-weight: 100;
-    text-decoration: none;
-    font-family: monospace;
-    letter-spacing: 2px;
-    border: 0.25px solid rgba(255,255,255,0.6);
-    padding: 14px 24px;
-    width: 240px;
+            /* yukarı zıplama */
+            100% {
+                transform: translateY(0);
+            }
 
-    margin-top: auto;
-    margin-bottom: 20px;
-    transition: border-width 0.2s ease;
+            /* geri başlangıca dön */
+        }
 
-    position: absolute;  /* card-content içinde konumlandır */
-    bottom: 0px;        /* alt boşluk */
-    left: 50%;           /* yatay ortalama */
-    transform: translateX(-50%); /* tam ortalama */
-}
+        .card-content {
+            flex: 1;
+            /* kalan yarıyı kaplasın */
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            /* soldan hizala */
+            justify-content: flex-start;
+            /* yukarıdan başla */
+            padding: 40px 20px 20px 40px;
+            background: rgb(24, 24, 24);
+            color: #000;
+            text-align: left;
+            position: relative;
+        }
 
-.post-btn:hover {
-    
-    color: white; /* yazı rengini sabit tutabilirsin */
-    background: none; /* arka plan değişmesin */
-    border: 1px solid white
-}
+        .card-content h3 {
+            margin: 0 0 15px 0;
+            font-size: 22px;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: 550;
+            color: rgba(255, 255, 255, 0.863);
+
+        }
+
+        .card-content p {
+            font-size: 15px;
+            color: rgba(255, 255, 255, 0.899);
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0 0 15px 0;
+            /* altta butondan boşluk */
+            line-height: 1.4;
+            letter-spacing: 1px;
+        }
+
+        .post-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            color: rgba(255, 255, 255, 0.6);
+            font-weight: 100;
+            text-decoration: none;
+            font-family: monospace;
+            letter-spacing: 2px;
+            border: 0.25px solid rgba(255, 255, 255, 0.6);
+            padding: 14px 24px;
+            width: 240px;
+
+            margin-top: auto;
+            margin-bottom: 20px;
+            transition: border-width 0.2s ease;
+
+            position: absolute;
+            /* card-content içinde konumlandır */
+            bottom: 0px;
+            /* alt boşluk */
+            left: 50%;
+            /* yatay ortalama */
+            transform: translateX(-50%);
+            /* tam ortalama */
+        }
+
+        .post-btn:hover {
+
+            color: white;
+            /* yazı rengini sabit tutabilirsin */
+            background: none;
+            /* arka plan değişmesin */
+            border: 1px solid white
+        }
 
         .arrow {
             display: inline-block;
             width: 10px;
             height: 10px;
-            border-right: 2px solid rgba(255,255,255,0.6);
-            border-bottom: 2px solid rgba(255,255,255,0.6);
+            border-right: 2px solid rgba(255, 255, 255, 0.6);
+            border-bottom: 2px solid rgba(255, 255, 255, 0.6);
             transform: rotate(-90deg);
             /* kuzeydoğu ok */
         }
@@ -993,105 +1053,111 @@
             top: -2px;
             transform: translateX(-50%) rotate(-45deg);
         }
+
         .post-btn:hover .arrow {
-    border-right: 2px solid white;
-    border-bottom: 2px solid white;
-}
+            border-right: 2px solid white;
+            border-bottom: 2px solid white;
+        }
 
-@media (max-width: 768px) {
-    #about-section {
-        padding: 40px 20px;
-        gap: 30px;
-    }
+        @media (max-width: 768px) {
+            #about-section {
+                padding: 40px 20px;
+                gap: 30px;
+            }
 
-    #about-section h2 {
-        font-size: 24px;
-        margin-bottom: 10px;
-    }
+            #about-section h2 {
+                font-size: 24px;
+                margin-bottom: 10px;
+            }
 
-    .destinations-container {
-        flex-direction: column;
-        gap: 20px;
-    }
+            .destinations-container {
+                flex-direction: column;
+                gap: 20px;
+            }
 
-    .destination-card {
-        min-height: 500px; /* kart yüksekliği içeriğe göre */
-    }
+            .destination-card {
+                min-height: 500px;
+                /* kart yüksekliği içeriğe göre */
+            }
 
-    .destination-card img {
-        height: 320px; /* mobilde resim yüksekliği */
-    }
+            .destination-card img {
+                height: 320px;
+                /* mobilde resim yüksekliği */
+            }
 
-    .card-content {
-        padding: 20px;
-        position: relative; /* yine de hover için bırakabiliriz */
-    }
+            .card-content {
+                padding: 20px;
+                position: relative;
+                /* yine de hover için bırakabiliriz */
+            }
 
-    .card-content h3 {
-        font-size: 18px;
-    }
+            .card-content h3 {
+                font-size: 18px;
+            }
 
-    .card-content p {
-        font-size: 14px;
-    }
+            .card-content p {
+                font-size: 14px;
+            }
 
-    .post-btn {
-        position: static;  /* absolute yerine normal akışa al */
-        width: 100%;
-        padding: 12px 0;
-        font-size: 14px;
-        margin-top: 15px;  /* yazıyla buton arasında boşluk */
-        transform: none;   /* X translate kaldırıldı */
-    }
-}
+            .post-btn {
+                position: static;
+                /* absolute yerine normal akışa al */
+                width: 100%;
+                padding: 12px 0;
+                font-size: 14px;
+                margin-top: 15px;
+                /* yazıyla buton arasında boşluk */
+                transform: none;
+                /* X translate kaldırıldı */
+            }
+        }
 
-@media (max-width: 1024px) and (min-width: 769px) {
-    #about-section {
-        padding: 50px 40px;
-        gap: 35px;
-    }
+        @media (max-width: 1024px) and (min-width: 769px) {
+            #about-section {
+                padding: 50px 40px;
+                gap: 35px;
+            }
 
-    #about-section h2 {
-        font-size: 28px;
-    }
+            #about-section h2 {
+                font-size: 28px;
+            }
 
-    .destinations-container {
-        flex-wrap: wrap;
-        gap: 25px;
-    }
+            .destinations-container {
+                flex-wrap: wrap;
+                gap: 25px;
+            }
 
-    .destination-card {
-        flex: 1 1 48%; /* iki kart yan yana esnek */
-        height: auto;
-    }
+            .destination-card {
+                flex: 1 1 48%;
+                /* iki kart yan yana esnek */
+                height: auto;
+            }
 
-    .destination-card img {
-        height: 250px;
-    }
+            .destination-card img {
+                height: 250px;
+            }
 
-    .card-content {
-        padding: 30px;
-    }
+            .card-content {
+                padding: 30px;
+            }
 
-    .card-content h3 {
-        font-size: 20px;
-    }
+            .card-content h3 {
+                font-size: 20px;
+            }
 
-    .card-content p {
-        font-size: 14px;
-    }
+            .card-content p {
+                font-size: 14px;
+            }
 
-    .post-btn {
-        width: 100%;
-        padding: 12px 0;
-        position: static;
-        margin-top: 15px;
-        transform: none;
-        font-size: 14px;
-    }
-}
-
-
+            .post-btn {
+                width: 100%;
+                padding: 12px 0;
+                position: static;
+                margin-top: 15px;
+                transform: none;
+                font-size: 14px;
+            }
+        }
     </style>
 </head>
 
@@ -1115,7 +1181,7 @@
                 <a href="IstikametleriGor.html" class="nav-link has-arrow">İSTİKAMET</a>
                 <div class="dropdown">
                     <div class="nav-item has-submenu">
-                        <a href="#" class="nav-link">ASYA</a>
+                        <a href="asya.html" class="nav-link">ASYA</a>
                         <div class="dropdown-sub">
                             <a href="#">Tayland</a>
                             <a href="#">Endonezya</a>
@@ -1147,8 +1213,18 @@
         <div class="overlay-content">
             <div class="overlay-links">
                 <a href="#">ANA SAYFA</a>
-                <a href="#" id="openIstikamet">İSTİKAMET</a>
-                <a href="#">TEMALAR</a>
+                <div class="istikamet-item">
+                    <a href="istikametlerigor.html" class="istikamet-link">İSTİKAMET</a>
+                    <span class="plus-btn" id="openIstikamet">
+                      <i class="fas fa-plus"></i>
+                    </span>
+                  </div>
+                  <div class="temalar-item">
+                    <a href="temalarigor.html" class="temalar-link">TEMALAR</a>
+                    <span class="plus-btn" id="openTemalar">
+                      <i class="fas fa-plus"></i>
+                    </span>
+                  </div>
                 <a href="aboutus.html">BİZ KİMİZ?</a>
                 <a href="#">İLETİŞİM</a>
                 <a href="#">MAĞAZAMIZ <i class="fas fa-shopping-cart"></i></a>
@@ -1173,9 +1249,22 @@
         <div class="overlay-content">
             <div class="overlay-links">
 
-                <a href="#" id="openAsya">ASYA</a>
-                <a href="#">AVRUPA</a>
-                <a href="#">TÜRKİYE</a>
+                <div class="asya-item">
+                    <a href="asya.html" class="asya-link">ASYA</a>
+                    <span class="plus-btn" id="openAsya">
+                      <i class="fas fa-plus"></i>
+                    </span>
+                  </div>
+                  
+                  <div class="avrupa-item">
+                    <a href="avrupa.html" class="avrupa-link">AVRUPA</a>
+                    <span class="plus-btn" id="openAvrupa"><i class="fas fa-plus"></i></span>
+                  </div>
+                
+                  <div class="turkiye-item">
+                    <a href="turkiye.html" class="turkiye-link">TÜRKİYE</a>
+                    <span class="plus-btn" id="openTurkiye"><i class="fas fa-plus"></i></span>
+                  </div>
             </div>
             <div class="overlay-search overlay-box">
                 <input type="text" id="searchInputIstikamet" placeholder="Rotanızı arayın" />
@@ -1194,7 +1283,7 @@
 
         <div class="overlay-content">
             <div class="overlay-links">
-                <a href="#">Tayland</a>
+                <a href="tayland.html">Tayland</a>
                 <a href="#">Endonezya</a>
             </div>
             <div class="overlay-search overlay-box">
@@ -1208,7 +1297,7 @@
     <div id="main-content">
         <div id="info-container">
             <div class="top-menu">
-                <a href="anasayfa.html">ANA SAYFA</a>
+                <a href="index.html">ANA SAYFA</a>
                 <span>|</span>
                 <a href="asya.html">ASYA</a>
                 <span>|</span>
@@ -1512,13 +1601,13 @@
             });
         }
 
-        document.querySelector('.destination-box').addEventListener('click', function(e) {
-    e.preventDefault(); // Linkin anında atlamasını engeller
-    document.querySelector('#about-section').scrollIntoView({
-        behavior: 'smooth', // yumuşak kayma
-        block: 'start'      // bölümün üstten başlamasını sağlar
-    });
-});
+        document.querySelector('.destination-box').addEventListener('click', function (e) {
+            e.preventDefault(); // Linkin anında atlamasını engeller
+            document.querySelector('#about-section').scrollIntoView({
+                behavior: 'smooth', // yumuşak kayma
+                block: 'start'      // bölümün üstten başlamasını sağlar
+            });
+        });
 
     </script>
 </body>
