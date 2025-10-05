@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <title>IstikametleriGor</title>
 
     <style>
@@ -131,6 +132,7 @@
             z-index: 1;
             text-align: left;
             margin-left: 35px;
+            transition: all 0.5s ease-in-out;
         }
 
         .dropdown a {
@@ -160,6 +162,7 @@
             background-color: rgb(242, 181, 68);
             min-width: 150px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: all 0.5s ease-in-out;
         }
 
         /* ASYA alt dropdown linkleri */
@@ -276,6 +279,7 @@
             text-align: left;
             z-index: 1;
             margin-top: 0;
+            
         }
 
 
@@ -602,6 +606,39 @@
 
 .nav-logo:hover {
   text-decoration: none; /* hover'da da çizgi olmasın */
+}
+
+.istikamet-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.plus-btn {
+  font-size: 22px;
+  cursor: pointer;
+  padding: 0 75px;
+  color: rgb(202, 200, 200);
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.plus-btn:hover {
+  transform: scale(1.2);
+  color: rgb(242, 181, 68); /* hover rengi */
+}
+
+.temalar-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.asya-item,
+.avrupa-item,
+.turkiye-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 
@@ -1234,7 +1271,7 @@
                 <a href="#" class="nav-link has-arrow">İSTİKAMET</a>
                 <div class="dropdown">
                     <div class="nav-item has-submenu">
-                        <a href="#" class="nav-link">ASYA</a>
+                        <a href="asya.html" class="nav-link">ASYA</a>
                         <div class="dropdown-sub">
                             <a href="tayland.html">Tayland</a>
                             <a href="#">Endonezya</a>
@@ -1268,8 +1305,18 @@
         <div class="overlay-content">
             <div class="overlay-links">
                 <a href="#">ANA SAYFA</a>
-                <a href="#" id="openIstikamet">İSTİKAMET</a>
-                <a href="#">TEMALAR</a>
+                <div class="istikamet-item">
+                    <a href="istikametlerigor.html" class="istikamet-link">İSTİKAMET</a>
+                    <span class="plus-btn" id="openIstikamet">
+                      <i class="fas fa-plus"></i>
+                    </span>
+                  </div>
+                  <div class="temalar-item">
+                    <a href="temalarigor.html" class="temalar-link">TEMALAR</a>
+                    <span class="plus-btn" id="openTemalar">
+                      <i class="fas fa-plus"></i>
+                    </span>
+                  </div>
                 <a href="#" id="openBizKimiz">BİZ KİMİZ?</a>
                 <a href="#">İLETİŞİM</a>
                 <a href="#">MAĞAZAMIZ <i class="fas fa-shopping-cart"></i></a>
@@ -1294,9 +1341,22 @@
         <div class="overlay-content">
             <div class="overlay-links">
 
-                <a href="#" id="openAsya">ASYA</a>
-                <a href="#">AVRUPA</a>
-                <a href="#">TÜRKİYE</a>
+                <div class="asya-item">
+                    <a href="asya.html" class="asya-link">ASYA</a>
+                    <span class="plus-btn" id="openAsya">
+                      <i class="fas fa-plus"></i>
+                    </span>
+                  </div>
+                  
+                  <div class="avrupa-item">
+                    <a href="avrupa.html" class="avrupa-link">AVRUPA</a>
+                    <span class="plus-btn" id="openAvrupa"><i class="fas fa-plus"></i></span>
+                  </div>
+                
+                  <div class="turkiye-item">
+                    <a href="turkiye.html" class="turkiye-link">TÜRKİYE</a>
+                    <span class="plus-btn" id="openTurkiye"><i class="fas fa-plus"></i></span>
+                  </div>
             </div>
             <div class="overlay-search overlay-box">
                 <input type="text" id="searchInputIstikamet" placeholder="Rotanızı arayın" />
