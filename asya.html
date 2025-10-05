@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <title>ASYA</title>
 
     <style>
@@ -639,6 +640,39 @@
             color: white;
         }
 
+        .istikamet-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.plus-btn {
+  font-size: 22px;
+  cursor: pointer;
+  padding: 0 75px;
+  color: rgb(202, 200, 200);
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.plus-btn:hover {
+  transform: scale(1.2);
+  color: rgb(242, 181, 68); /* hover rengi */
+}
+
+.temalar-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.asya-item,
+.avrupa-item,
+.turkiye-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 
         #main-content {
             display: flex;
@@ -1143,8 +1177,18 @@
         <div class="overlay-content">
             <div class="overlay-links">
                 <a href="index.html">ANA SAYFA</a>
-                <a href="#" id="openIstikamet">İSTİKAMET</a>
-                <a href="#">TEMALAR</a>
+                <div class="istikamet-item">
+                    <a href="istikametlerigor.html" class="istikamet-link">İSTİKAMET</a>
+                    <span class="plus-btn" id="openIstikamet">
+                      <i class="fas fa-plus"></i>
+                    </span>
+                  </div>
+                  <div class="temalar-item">
+                    <a href="temalarigor.html" class="temalar-link">TEMALAR</a>
+                    <span class="plus-btn" id="openTemalar">
+                      <i class="fas fa-plus"></i>
+                    </span>
+                  </div>
                 <a href="aboutus.html">BİZ KİMİZ?</a>
                 <a href="#">İLETİŞİM</a>
                 <a href="#">MAĞAZAMIZ <i class="fas fa-shopping-cart"></i></a>
@@ -1169,9 +1213,22 @@
         <div class="overlay-content">
             <div class="overlay-links">
 
-                <a href="#" id="openAsya">ASYA</a>
-                <a href="#">AVRUPA</a>
-                <a href="#">TÜRKİYE</a>
+                <div class="asya-item">
+                    <a href="asya.html" class="asya-link">ASYA</a>
+                    <span class="plus-btn" id="openAsya">
+                      <i class="fas fa-plus"></i>
+                    </span>
+                  </div>
+                  
+                  <div class="avrupa-item">
+                    <a href="avrupa.html" class="avrupa-link">AVRUPA</a>
+                    <span class="plus-btn" id="openAvrupa"><i class="fas fa-plus"></i></span>
+                  </div>
+                
+                  <div class="turkiye-item">
+                    <a href="turkiye.html" class="turkiye-link">TÜRKİYE</a>
+                    <span class="plus-btn" id="openTurkiye"><i class="fas fa-plus"></i></span>
+                  </div>
             </div>
             <div class="overlay-search overlay-box">
                 <input type="text" id="searchInputIstikamet" placeholder="Rotanızı arayın" />
