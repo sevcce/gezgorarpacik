@@ -745,7 +745,7 @@
       height: 89%;
       background: url(resimler/web3.jpeg) no-repeat center center;
       background-size: cover;
-      color: white;
+      color: rgba(255, 255, 255, 0.85)e;
       padding: 40px;
       padding-left: 100px;
       display: flex;
@@ -753,6 +753,7 @@
       justify-content: center;
       box-sizing: border-box;
       margin-bottom: 120px;
+      filter: contrast(1.2) brightness(1.05);
     }
 
     .shop-link {
@@ -767,7 +768,7 @@
       /* dönüş merkezi */
       font-size: 16px;
       font-weight: 500;
-      color: white;
+      color: rgba(255, 255, 255, 0.85);
       background: none;
       /* arka plan yok */
       border: none;
@@ -784,8 +785,8 @@
       display: inline-block;
       width: 12px;
       height: 12px;
-      border-top: 2px solid white;
-      border-left: 2px solid white;
+      border-top: 2px solid rgba(255, 255, 255, 0.85);
+      border-left: 2px solid rgba(255, 255, 255, 0.85);
       transform: rotate(90deg);
       /* kuzeybatıya yön */
       position: relative;
@@ -822,7 +823,7 @@
 
       font-family: 'Montserrat', sans-serif;
       font-weight: 300;
-      color: white;
+      color: rgba(255, 255, 255, 0.85);
       line-height: 0.6;
       /* satır aralığı */
       margin-bottom: 10px;
@@ -850,10 +851,10 @@
     .destination-box {
       margin-top: 20px;/* Paragraftan biraz boşluk bırakır */
       padding: 13px 23px;/* İç boşluk */
-      border: 2px solid white;
+      border: 2px solid rgba(255, 255, 255, 0.85);
       border-radius: 3px;/* Köşeleri yuvarlatır */
       background-color: none;
-      color: white;/* Yazı rengi */
+      color: rgba(255, 255, 255, 0.85);/* Yazı rengi */
       width: 270px;
       font-weight: bold;
       cursor: pointer;
@@ -876,8 +877,8 @@
       display: inline-block;
       width: 10px;
       height: 10px;
-      border-right: 2px solid white;
-      border-bottom: 2px solid white;
+      border-right: 2px solid rgba(255, 255, 255, 0.85);
+      border-bottom: 2px solid rgba(255, 255, 255, 0.85);
       transform: rotate(-90deg);
       /* Güneydoğu yönü */
       transition: transform 0.3s ease;
@@ -952,7 +953,7 @@
       padding: 0;
       font-family: sans-serif;
       background-color: rgb(24, 24, 24);
-      color: white;
+      color: rgba(255, 255, 255, 0.85);
     }
 
     #about-section {
@@ -1115,7 +1116,7 @@
       <div class="nav-item">
         <a href="aboutus.html" class="nav-link">BİZ KİMİZ?</a>
       </div>
-      <div class="nav-item"><a href="#" class="nav-link">İLETİŞİM</a></div>
+      <div class="nav-item"><a href="iletisim.html" class="nav-link">İLETİŞİM</a></div>
     </div>
     <div class="nav-search">
       <input type="text" id="searchInput" placeholder="Rotanızı arayın" />
@@ -1133,7 +1134,7 @@
 
     <div class="overlay-content">
       <div class="overlay-links">
-        <a href="#">ANA SAYFA</a>
+        <a href="index.html">ANA SAYFA</a>
         <div class="istikamet-item">
           <a href="istikametlerigor.html" class="istikamet-link">İSTİKAMET</a>
           <span class="plus-btn" id="openIstikamet">
@@ -1147,8 +1148,8 @@
           </span>
         </div>
         
-        <a href="#">BİZ KİMİZ?</a>
-        <a href="#">İLETİŞİM</a>
+        <a href="aboutus.html">BİZ KİMİZ?</a>
+        <a href="iletisim.html">İLETİŞİM</a>
         <a href="#">MAĞAZAMIZ <i class="fas fa-shopping-cart"></i></a>
       </div>
       <div class="overlay-search overlay-box">
@@ -1229,7 +1230,7 @@
         Bu harika yolculukta bize katılın…</p>
 
         <a href="IstikametleriGor.html" class="destination-box">
-          İstikametleri Gör
+          İSTİKAMETLERİ GÖR
           <span class="destination-arrow"></span>
         </a>
 
