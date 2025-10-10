@@ -1109,6 +1109,7 @@
             /* başlık ve paragraf arasında boşluk */
             object-fit: cover;
             object-position: center 75%;
+            filter: contrast(1.2) brightness(1.05);
 
         }
 
@@ -1120,6 +1121,90 @@
                 height: auto;
                 /* yüksekliği otomatik yap */
                 object-fit: contain;
+            }
+        }
+
+        strong {
+            font-weight: 1000;
+            color: white;
+
+            font-family: monospace;
+
+        }
+
+        .phuket-map {
+            margin-top: 40px;
+            padding: 20px;
+            text-align: flex-start;
+            font-size: 30px;
+        }
+
+        .map-container {
+            display: flex;
+            justify-content: flex;
+            align-items: flex-start;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .map-container iframe {
+            flex: 1 1 600px;
+            max-width: 700px;
+            height: 500px;
+        }
+
+        .map-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            text-align: left;
+            justify-content: center;
+            font-size: 1rem;
+        }
+
+        .point {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: whitesmoke;
+            font-weight: 500;
+        }
+
+        .circle {
+            width: 26px;
+            height: 26px;
+            background-color: #0097b2;
+            /* Mavi yuvarlak */
+            color: white;
+            border-radius: 50%;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .map-list {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                /* 2 sütun */
+                gap: 12px 24px;
+                margin-top: 15px;
+            }
+
+            .map-container {
+                flex-direction: column;
+            }
+
+            .map-container iframe {
+                width: 100%;
+                height: 300px;
+            }
+
+            .point {
+                justify-content: flex-start;
             }
         }
     </style>
@@ -1302,7 +1387,8 @@
 
             <section id="section1">
                 <h2>Phuket Seyahat Rehberi</h2>
-                <p>Phuket, Tayland’ın en çok bilinen adalarından biri olsa da, herkesin beklentisine hitap
+                <p><strong>Phuket</strong>, Tayland’ın en çok bilinen adalarından biri olsa da, herkesin beklentisine
+                    hitap
                     etmeyebilir.
                     Ada, Tayland’ın güneyine özgü sıcak ve nemli havasıyla tropik bir atmosfer sunuyor — bize göre
                     biraz
@@ -1328,7 +1414,7 @@
                     belirleyip rotanızı buna göre planlamanızı öneririz.
                     <br><br>
                 <h4>Para Birimi ve Fiyatlar</h4>
-                <p>Tayland’ın resmi para birimi Baht (THB)’dir.<br>
+                <p>Tayland’ın resmi para birimi <strong>Baht (THB)</strong>’dir.<br>
                     2025 itibarıyla ortalama kurlar yaklaşık olarak:<br><br>
 
                     1 Tayland Baht ≈ 1,29 TL (yaklaşık değer)<br>
@@ -1444,14 +1530,109 @@
                 </p>
             </section>
 
-            <section id="section2">
+            <section id="section2" class="phuket-map">
                 <h2>Phuket Gezi Haritası</h2>
-                <p>Bu ada dalış tutkunları için cennettir...</p>
+                <p><strong>Phuket</strong>’te gezilecek yerleri keşfedip kendi rotanızı oluşturmak için haritamızı
+                    kullanabilirsiniz.
+                    En sevdiğimiz plajlar, tapınaklar ve manzara noktaları burada işaretli!</p>
+
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/d/embed?mid=1y3W8K67Y1kpARbVprUraSAiTxHOws_M&ehbc=2E312F"
+                        width="640" height="480"></iframe>
+
+                    <div class="map-list">
+                        <div class="point"><span class="circle">1</span> Karon Bölgesi</div>
+                        <div class="point"><span class="circle">2</span> Kata Bölgesi</div>
+                        <div class="point"><span class="circle">3</span> Nai Harn Plajı</div>
+                        <div class="point"><span class="circle">4</span> Windmill Seyir Noktası</div>
+                        <div class="point"><span class="circle">5</span> Ya Nui Plajı</div>
+                        <div class="point"><span class="circle">6</span> Chalong Bölgesi</div>
+                        <div class="point"><span class="circle">7</span> Phuket Old Town</div>
+                        <div class="point"><span class="circle">8</span> Thalang Yolu</div>
+                        <div class="point"><span class="circle">9</span> Monkey Hill</div>
+                        <div class="point"><span class="circle">10</span> Wat Chalong Tapınağı</div>
+                        <div class="point"><span class="circle">11</span> Patong Bölgesi</div>
+                        <div class="point"><span class="circle">12</span> Phi Phi Adası</div>
+                        <div class="point"><span class="circle">13</span> Maya Koyu</div>
+                        <div class="point"><span class="circle">14</span> Big Budda Heykeli</div>
+                    </div>
+                </div>
             </section>
 
             <section id="section3">
                 <h2>Kata ve Karon Bölgesi, Phuket</h2>
-                <p>Kuzey Tayland’ın kültürel başkentidir...</p>
+                <img src="resimler/karon1.jpeg" alt="Wat Nai Harn Tapınağı" class="section-img">
+                <>Phuket’teki ilk durağımız <strong>Karon Bölgesi</strong> oldu ve iyi ki de öyle olmuş! Adanın
+                    kalabalığını ve
+                    karmaşasını henüz bilmeden ilk günlerimizi burada geçirmek bizim için büyük şanstı. Çünkü Karon,
+                    Phuket’in batı kıyısında yer alan sakin ve düzenli bir
+                    bölge. Hem sahile hem de günlük ihtiyaçlara kolay ulaşabiliyorsunuz. Kısacası, Phuket’i ilk kez
+                    keşfedecekler için mükemmel bir başlangıç noktası..<br><br>
+
+                    Karon’da konakladığımız otel, konumu sayesinde hem sahile hem de merkeze yürüyerek ulaşabileceğimiz
+                    kadar yakındı. Sabah kahvaltıdan sonra plaja geçmek, akşamları ise çevredeki restoran ve marketleri
+                    gezmek çok kolaydı. Bu bölge, otelden çıkıp yürüyerek çevreyi keşfetmeyi sevenler için gerçekten
+                    ideal. Üstelik konaklama seçenekleri oldukça geniş; denize sıfır otellerden uygun fiyatlı butik
+                    otellere kadar her bütçeye göre alternatif bulmak mümkün.<br><br>
+
+                    Karon’un merkezine çıkan uzun caddelerde meyve satıcılarından motor kiralama noktalarına,
+                    restoranlardan Thai masaj salonlarına kadar her şeyi bulmak mümkün.
+                    Tabii ki Tayland’ın meşhur market zinciri <strong>7-Eleven</strong> da her köşede karşınıza çıkıyor.
+                    Kısacık bir parantez açalım: <strong>7-Eleven</strong>’lar Tayland’da neredeyse hayat kurtarıcı.
+                    İlaçtan
+                    atıştırmalığa, kahveden taze meyveye kadar her şeye sahipler ve günün her saati açıklar.<br><br>
+
+                    Karon Plajı, Phuket’in en uzun plajlarından biri (yaklaşık 3 kilometre). Sabah erken saatlerde deniz
+                    sakin ve huzurlu; yüzmek ve yürüyüş yapmak için en keyifli zamanlar. Gün ilerledikçe jetski,
+                    parasailing ve satıcılarla birlikte plaj kalabalıklaşıyor.
+                    <img src="resimler/karongunes.jpeg" alt="karongunes" class="section-img">
+                    <br><br>
+
+                    Akşamları sahil boyunca kurulan <strong>Karon Night Market</strong>, bölgenin en keyifli yerlerinden
+                    biri. Tay
+                    lezzetleri, tropik meyveler, el yapımı takılar ve hediyeliklerle dolu.<br><br>
+                    Karon’dan motorla ya da araçla <strong>Phuket’in diğer bölgelerine ulaşım çok kolay</strong>.
+                    Patong’a 10-15
+                    dakika, Kata’ya ise yalnızca 5 dakika mesafede.
+                    <br><br>
+                    Ayrıca Karon’dan sadece 5 dakika uzaklıktaki Kata Bölgesi de keşfetmeye değer. Karon ve Kata
+                    birbirine çok benzer; her ikisi de sakin, düzenli plajları ve rahat yürüyüş alanlarıyla ön plana
+                    çıkıyor. Motor veya araçla yalnızca 5 dakikada ulaşılabiliyor, bu sayede gün içinde plaj ve
+                    aktiviteleri kombinleyerek deneyimlemek mümkün. Karon’da konaklayıp Kata’ya günübirlik gitmek,
+                    Phuket’in batı kıyısındaki iki güzel bölgeyi birden keşfetmek isteyenler için verimli bir
+                    seçenek.<br><br>
+
+                    Sonuç olarak; <strong>Kata ve Karon Bölgeleri</strong>, Phuket’in kalabalığına çok da karışmadan
+                    deniz, güneş ve Tayland atmosferini doyasıya
+                    yaşamak isteyenler için harika bir tercih.<br><br><br>
+
+                    <h4>Ek Olarak Big Budda'yı Ziyaret Edin ve Manzaranın Keyfini Çıkarın</h4>
+                    <p>Phuket’in simgelerinden biri olan <strong>Big Buddha</strong>, Nakkerd Tepesi’nin zirvesinde yer
+                        alıyor ve adanın dört
+                        bir yanından görülebilen devasa bir heykel. 45 metre yüksekliğindeki bu beyaz mermer Buddha,
+                        huzur ve dinginliğin sembolü olarak kabul ediliyor. Zirveye ulaşıldığında, Karon ve Kata plajlarını kapsayan çok geniş manzaralar ziyaretçileri karşılıyor.<br><br>
+                        <strong>Karon bölgesine yalnızca 15–20 dakika uzaklıkta</strong> bulunan Big Buddha’ya motorla
+                        ya da araçla kolayca ulaşılabiliyor. Yolun son bölümü biraz dik ve kıvrımlı olsa da asfalt
+                        olduğu için rahat bir
+                        sürüş sunuyor. Karon’da konaklayanlar için kısa bir sabah gezisi ya da gün batımı planı için
+                        ideal bir
+                        rota.
+                    </p>
+
+                    <div class="text-image-row">
+                        <p>
+                            Biz gittiğimizde bölgede heyelan nedeniyle erişim kısıtlıydı, bu yüzden heykeli yalnızca
+                            belirli bir açıdan görebildik. Bu nedenle gitmeden önce alanın açık olup olmadığını kontrol
+                            etmekte fayda var.<br><br>
+                            Yine de ulaşabildiğimiz noktadan bile Karon ve Kata plajlarını kapsayan muhteşem manzaraya
+                            tanık olabildik.
+                        </p>
+                        <img src="resimler/bigbudda.jpeg" alt="big budda">
+                    </div>
+
+
+
+
             </section>
 
             <section id="section4">
@@ -1465,8 +1646,26 @@
             </section>
 
             <section id="section6">
-                <h2>Patong Bölgesi ve Gece Hayatı, Phuket</h2>
-                <p>Antik tapınaklarıyla ünlü bir UNESCO mirası şehridir...</p>
+                <h2>Phuket’te Gece Hayatı: Patong Deneyimi</h2>
+                <img src="resimler/patong2.jpeg" alt="Wat Nai Harn Tapınağı" class="section-img">
+                <p> Phuket’in en bilinen ve en kalabalık bölgesi olan <strong>Patong</strong>, adanın eğlence merkezi
+                    olarak geçiyor. Gündüzleri uzun sahilinde su sporları yapanlarla dolup taşarken, geceleri bambaşka
+                    bir atmosfere bürünüyor. Renkli ışıklar, yüksek müzik sesleri, kalabalık caddeler... Her şey
+                    hareketli, canlı ve biraz da karmaşık. <br><br> Bangla Road adındaki meşhur cadde, Patong’un gece
+                    hayatının kalbi sayılıyor. Güneş battıktan sonra trafiğe kapanıyor ve tamamen yayalara kalıyor. Her
+                    adımda farklı bir müzik duyuyorsunuz, barlar, kulüpler, sokak gösterileri... Dünyaca ünlü DJ’lerin
+                    performans sergilediği <strong>Illuzion</strong> ve <strong>Sugar Club</strong> gibi yerler,
+                    eğlencenin en popüler duraklarından. <br><br> Biz ise bu kadar yoğun ve gürültülü bir atmosferin
+                    içinde çok rahat
+                    edemedik. Açıkçası Patong, bizim tarzımıza pek hitap eden bir yer değildi. Kalabalığı, sürekli
+                    hareketi ve ticari havasıyla biraz yorucu geldi. <br><br> Yine de bir akşam gidip atmosferi görmek,
+                    bu tarafın enerjisini hissetmek istedik. Bangla Road’da kısa bir yürüyüş yaptık, caddenin ritmini ve
+                    kalabalığın enerjisini deneyimledik ama bizim için bir kez görmek yeterliydi. <br><br> Eğer
+                    eğlencenin tam ortasında olmak, sabaha kadar müzik ve kalabalık içinde vakit geçirmek istiyorsanız
+                    Patong tam size göre olabilir. Ama daha sakin, doğal ve Tayland’ın yerel havasını hissetmek
+                    istiyorsanız, adanın güneyinde kalan <strong>Rawai</strong> veya <strong>Kata</strong> gibi bölgeler
+                    çok daha keyifli alternatifler sunuyor. </p>
+            </section>
             </section>
 
             <section id="section7">
@@ -1476,7 +1675,8 @@
                     <img src="resimler/monkeyhill1.jpeg" alt="Monkey Hill 2">
                     <img src="resimler/monkeyhill2.jpeg" alt="Monkey Hill 3">
                 </div><br>
-                <p>Monkey Hill’e giriş ücretsiz ve girişinde bir otopark var; arabanızı veya motorunuzu burada
+                <p><strong>Monkey Hill</strong>’e giriş ücretsiz ve girişinde bir otopark var; arabanızı veya motorunuzu
+                    burada
                     bırakıyorsunuz. Tırmanış zorlu değil ama uzun bir yürüyüş sizi bekliyor. Güvenliğiniz için girerken
                     yiyecek kontrolü yapılıyor — özellikle muz kesinlikle yasak.<br><br>
                     Yürüyüşe başladığınızda maymunlar her yerde: yolun ortasında oturuyor, ağaçlarda gezinip sizi
@@ -1504,11 +1704,13 @@
 
                 <img src="resimler/monkeyhilltapinak.jpeg" alt="Monkey Hill" class="section-img">
 
-                <p>Tepeye çıkarken küçük bir Çin tapınağı var, dilerseniz durup gezebilirsiniz. Çok büyük bir özellik
+                <p>Tepeye çıkarken küçük bir <strong>Çin tapınağı</strong> var, dilerseniz durup gezebilirsiniz. Çok
+                    büyük bir özellik
                     beklemeyin
                     ama Tayland’a yeni gelenler için her detay ilginç ve keyifli.
                     <br><br>
-                    Monkey Hill’deki yürüyüş, güzel manzara ve maymunlarla eğlenceli karşılaşmalarla dolu unutulmaz bir
+                    <strong>Monkey Hill</strong>’deki yürüyüş, güzel manzara ve maymunlarla eğlenceli karşılaşmalarla
+                    dolu unutulmaz bir
                     deneyim sunuyor, ama her zaman dikkatli olmakta fayda var! 🐒🌿
                 </p>
 
@@ -1525,10 +1727,12 @@
             </section>
 
             <section id="section10">
-                <h2>Phuket Rawai'de Kano Keyfi</h2>
-                <p>Rawai, bizim için Phuket’in kalabalığından kaçıp nefes alabildiğimiz bir yer oldu. Chalong’da
+                <h2>Phuket Rawai Bölgesi ve Kano Keyfi</h2>
+                <p><strong>Rawai</strong>, bizim için Phuket’in kalabalığından kaçıp nefes alabildiğimiz bir yer oldu.
+                    Chalong’da
                     konakladığımız günlerde sık sık buraya kaçtık; hem yolculuğu hem de burada geçirdiğimiz zamanları
-                    gerçekten çok sevdik. İlk durağımız Nai Harn Plajı oldu, ardından şans eseri Ya Nui Plajını
+                    gerçekten çok sevdik. İlk durağımız <strong>Nai Harn Plajı</strong> oldu, ardından şans eseri
+                    <strong>Ya Nui Plaj</strong>ını
                     keşfettik; iyi ki de keşfetmişiz!
                     <br><br>
                     Nai Harn Beach, Phuket’in en popüler ama hâlâ doğallığını koruyabilmiş plajlarından biri.
@@ -1540,7 +1744,7 @@
 
 
                     Biz gittiğimizde çok kalabalıktı, bu yüzden biraz daha sakin bir yer arayışına girdik.
-                    Nai Harn plajından çıkarken dikkatimizi bir tapınak çekti: Wat Nai Harn.
+                    Nai Harn plajından çıkarken dikkatimizi bir tapınak çekti: <strong>Wat Nai Harn</strong>.
 
                     <img src="resimler/watnaiharn.jpeg" alt="Wat Nai Harn Tapınağı" class="section-img">
 
@@ -1571,10 +1775,12 @@
                     <img src="resimler/kano.jpeg" alt="Wat Nai Harn Tapınağı" class="section-img">
 
                     Aslında Ya Nui Beach'i tamamen tesadüfen bulduk.
-                    Windmill Viewpoint’e çıktığımızda aşağıda, turkuaz sularla çevrili bir koy gördük İşte o koy
+                    <strong>Windmill Viewpoint</strong>’e çıktığımızda aşağıda, turkuaz sularla çevrili bir koy gördük
+                    İşte o koy
                     Ya Nui’ydi!
                     <br><br>
-                    Windmill Viewpoint ise, Phuket’in en güney ucunda, Nai Harn Beach ve Ya Nui Beach arasında yer alan
+                    <strong>Windmill Viewpoint</strong> ise, Phuket’in en güney ucunda, Nai Harn Beach ve Ya Nui Beach
+                    arasında yer alan
                     küçük ama
                     büyüleyici bir seyir noktasıdır.
 
@@ -1589,7 +1795,8 @@
                     İnişli çıkışlı, virajlı ama manzaralı yollar boyunca motor sürmek inanılmaz keyifli.
                     Bir gün yağmura yakalandık, toprak kokusu ve yeşilin tonlarıyla çevrili o an, gerçekten unutulmazdı.
                     <br><br>
-                    Kısacası; Phuket’in güney ucunda yer alan Rawai, adanın en turistik bölgelerinden biraz uzakta, daha
+                    Kısacası; Phuket’in güney ucunda yer alan <strong>Rawai</strong>, adanın en turistik bölgelerinden
+                    biraz uzakta, daha
                     otantik, yerel yaşamın korunduğu beş yıldızlı otellerden çok, küçük butik oteller, aile işletmesi
                     restoranlar ve sahil boyunca uzanan balıkçı teknelerinin olduğu bir yer. Eğer kalabalıktan uzaklaşıp
                     Tayland’ın “gerçek” halini
