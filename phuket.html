@@ -703,6 +703,66 @@
 
         }
 
+        .shop-link {
+            position: fixed;
+            right: 60px;
+            /* sağdan boşluk */
+            top: 50%;
+            /* dikey ortala */
+            transform: translateY(-50%) rotate(-90deg);
+            /* ters döndür */
+            transform-origin: top right;
+            /* dönüş merkezi */
+            font-size: 16px;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.899);
+            background: none;
+            /* arka plan yok */
+            border: none;
+            font-family: monospace;
+            text-decoration: none;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            display: flex;
+            gap: 20px;
+        }
+
+        .shop-arrow {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border-top: 2px solid rgba(255, 255, 255, 0.899);
+            border-left: 2px solid rgba(255, 255, 255, 0.899);
+            transform: rotate(90deg);
+            /* kuzeybatıya yön */
+            position: relative;
+        }
+
+        .shop-arrow::after {
+            content: '';
+            position: absolute;
+            width: 2px;
+            /* çizgi kalınlığı */
+            height: 14px;
+            /* ok uzunluğu */
+            background-color: currentColor;
+            left: 50%;
+            top: -2px;
+            transform: translateX(-50%) rotate(-45deg);
+            /* ok açısına hizala */
+        }
+
+        @media (max-width: 900px) {
+            .shop-link {
+                display: none;
+                /* mobilde mağazamız kaybolsun */
+            }
+        }
+
+
+
+
         /* Sol içerik */
         .content.card {
             padding: 0;
@@ -941,14 +1001,15 @@
         }
 
         .content-sections h2 {
-            margin-bottom: 50px;
+            margin-bottom: 30px;
             font-size: 30px;
-            color: #f2f2f2;
+            color: rgb(237, 217, 182);
             font-family: monospace;
         }
 
         .content-sections h4 {
             color: whitesmoke;
+            font-size: 20px;
         }
 
         /* ✅ Mobil uyumluluk: content-sections */
@@ -1004,6 +1065,7 @@
             gap: 10px;
             /* resimler arası boşluk */
             margin: 20px 0;
+
         }
 
         .image-row img {
@@ -1014,6 +1076,7 @@
             object-fit: cover;
             /* kırpmadan dolgu yap */
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            filter: contrast(1.2) brightness(1.05);
 
         }
 
@@ -1022,6 +1085,7 @@
             /* %5 büyüme */
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
             /* hafif gölge */
+            z-index: 1;
         }
 
         /* Mobil uyumlu */
@@ -1066,6 +1130,7 @@
             object-fit: cover;
             transition: transform 0.3s ease;
             /* hover efekti */
+            filter: contrast(1.2) brightness(1.05);
 
         }
 
@@ -1353,6 +1418,14 @@
                 <a href="asya.html">ASYA</a>
                 <span>|</span>
                 <a href="tayland.html">TAYLAND</a>
+
+            </div>
+
+            <div>
+                <a href="https://magazamiz.com" class="shop-link" target="_blank">
+                    MAĞAZAMIZ
+                    <span class="shop-arrow"></span>
+                </a>
             </div>
             <div class="content-textbox">
                 <h3 class="content-title">Phuket'te Yapılacak 10 Şey ve Daha Fazlası</h3>
@@ -1546,23 +1619,23 @@
                         <div class="point"><span class="circle">3</span> Nai Harn Plajı</div>
                         <div class="point"><span class="circle">4</span> Windmill Seyir Noktası</div>
                         <div class="point"><span class="circle">5</span> Ya Nui Plajı</div>
-                        <div class="point"><span class="circle">6</span> Chalong Bölgesi</div>
-                        <div class="point"><span class="circle">7</span> Phuket Old Town</div>
-                        <div class="point"><span class="circle">8</span> Thalang Yolu</div>
-                        <div class="point"><span class="circle">9</span> Monkey Hill</div>
+                        <div class="point"><span class="circle">6</span> Phuket Old Town</div>
+                        <div class="point"><span class="circle">7</span> Thalang Yolu</div>
+                        <div class="point"><span class="circle">8</span> Monkey Hill</div>
+                        <div class="point"><span class="circle">9</span> Chalong Bölgesi</div>
                         <div class="point"><span class="circle">10</span> Wat Chalong Tapınağı</div>
-                        <div class="point"><span class="circle">11</span> Patong Bölgesi</div>
-                        <div class="point"><span class="circle">12</span> Phi Phi Adası</div>
-                        <div class="point"><span class="circle">13</span> Maya Koyu</div>
-                        <div class="point"><span class="circle">14</span> Big Budda Heykeli</div>
+                        <div class="point"><span class="circle">11</span> Big Budda Heykeli</div>
+                        <div class="point"><span class="circle">12</span> Chalong Bay Rom Evi</div>
+                        <div class="point"><span class="circle">13</span> Patong Bölgesi</div>
+                        <div class="point"><span class="circle">14</span> Phi Phi Adası</div>
                     </div>
                 </div>
-            </section>
+            </section><br><br><br>
 
             <section id="section3">
                 <h2>Kata ve Karon Bölgesi, Phuket</h2>
                 <img src="resimler/karon1.jpeg" alt="Wat Nai Harn Tapınağı" class="section-img">
-                <>Phuket’teki ilk durağımız <strong>Karon Bölgesi</strong> oldu ve iyi ki de öyle olmuş! Adanın
+                <p>Phuket’teki ilk durağımız <strong>Karon Bölgesi</strong> oldu ve iyi ki de öyle olmuş! Adanın
                     kalabalığını ve
                     karmaşasını henüz bilmeden ilk günlerimizi burada geçirmek bizim için büyük şanstı. Çünkü Karon,
                     Phuket’in batı kıyısında yer alan sakin ve düzenli bir
@@ -1606,38 +1679,170 @@
                     deniz, güneş ve Tayland atmosferini doyasıya
                     yaşamak isteyenler için harika bir tercih.<br><br><br>
 
-                    <h4>Ek Olarak Big Budda'yı Ziyaret Edin ve Manzaranın Keyfini Çıkarın</h4>
-                    <p>Phuket’in simgelerinden biri olan <strong>Big Buddha</strong>, Nakkerd Tepesi’nin zirvesinde yer
-                        alıyor ve adanın dört
-                        bir yanından görülebilen devasa bir heykel. 45 metre yüksekliğindeki bu beyaz mermer Buddha,
-                        huzur ve dinginliğin sembolü olarak kabul ediliyor. Zirveye ulaşıldığında, Karon ve Kata plajlarını kapsayan çok geniş manzaralar ziyaretçileri karşılıyor.<br><br>
-                        <strong>Karon bölgesine yalnızca 15–20 dakika uzaklıkta</strong> bulunan Big Buddha’ya motorla
-                        ya da araçla kolayca ulaşılabiliyor. Yolun son bölümü biraz dik ve kıvrımlı olsa da asfalt
-                        olduğu için rahat bir
-                        sürüş sunuyor. Karon’da konaklayanlar için kısa bir sabah gezisi ya da gün batımı planı için
-                        ideal bir
-                        rota.
-                    </p>
-
-                    <div class="text-image-row">
-                        <p>
-                            Biz gittiğimizde bölgede heyelan nedeniyle erişim kısıtlıydı, bu yüzden heykeli yalnızca
-                            belirli bir açıdan görebildik. Bu nedenle gitmeden önce alanın açık olup olmadığını kontrol
-                            etmekte fayda var.<br><br>
-                            Yine de ulaşabildiğimiz noktadan bile Karon ve Kata plajlarını kapsayan muhteşem manzaraya
-                            tanık olabildik.
-                        </p>
-                        <img src="resimler/bigbudda.jpeg" alt="big budda">
-                    </div>
-
-
-
+                </p>
 
             </section>
 
             <section id="section4">
                 <h2>Chalong Bölgesi, Phuket</h2>
-                <p>Dağlarla çevrili, huzurlu bir kasabadır...</p>
+
+                <img src="resimler/chalong.jpeg" alt="chalong" class="section-img">
+                <p>Phuket’in güneyinde yer alan <strong>Chalong</strong>, adanın en sakin, huzurlu ve otantik
+                    bölgelerinden biri.
+                    Kalabalıktan uzak, Tayland’ın yerel yaşamının nabzını hissedebileceğiniz bir yer.
+                    Biz de tatilimizin son 5 gününü burada geçirerek adeta Phuket’in “diğer yüzünü” keşfettik.
+                    <br><br>
+
+                    Karon’daki hareketli günlerin ardından <strong>The Beatle Lagoon</strong> adlı hotelde kaldık.
+                    Sessiz, sakin ve doğayla iç içeydi. Odalar sade ve ferah; verandaya çıktığınızda sizi yemyeşil bir
+                    manzara karşılıyor, kuş sesleri ve palmiyeler eşliğinde. Dilerseniz belirli gün ve saatlerde yoga
+                    derslerine katılabilir, otelin göletinde kano yapabilir ya da sadece sessizliğin ve doğanın tadını
+                    çıkarabilirsiniz.
+                    Gerçek anlamda “dinlenmek” isteyenler için birebir bir konaklama deneyimi.
+                    <img src="resimler/thelagoon.jpeg" alt="thebeatleslagoon" class="section-img">
+                    <br><br>
+                    Sanki Phuket değil de bambaşka bir yerdeymişiz gibiydi. Denize girilecek bir yer olmasa da, her yere
+                    çok yakındı.
+                    <strong>Rawai</strong>, <strong>Kata</strong>, <strong>Karon</strong> ve hatta <strong>Phuket
+                        Town</strong>’a kısa sürede ulaşmak mümkün. Sabah yürüyüşleri için ideal geniş yolları, huzurlu
+                    atmosferiyle bize çok iyi geldi.<br><br>
+
+                    Rezervasyonlarınızı Booking.com üzerinden yapabilirsiniz.<br><br>
+
+                    Konakladığımız yere yalnızca 1-2 kilometre uzaklıkta <strong>Robinson Lifestyle Alışveriş
+                        Merkezi</strong>
+                    bulunuyordu. İçini çok gezmedik ama dışarıda hafta sonları akşam saatlerinde kurulan <strong>night
+                        market</strong> gerçekten harikaydı!
+                    Renkli ışıklar, mis gibi sokak yemekleri kokusu ve canlı atmosferiyle, yerel Tayland lezzetlerini
+                    denemek için mutlaka uğranması gereken bir durak. Küçücük tezgâhlarda pişen deniz ürünleri, taze
+                    meyve suları ve tatlılar hem lezzetliydi hem de fiyatlar oldukça uygundu.<br><br>
+
+                    Bu alışveriş merkezini geçip hemen sola döndüğünüzde ise kendinizi <strong>Ta Iat Road</strong>’da
+                    buluyorsunuz.
+                    Burası Chalong’un kalbinde, enerjisi yüksek ve bir o kadar da huzurlu bir cadde.
+                    Sabahın erken saatlerinden itibaren sokaklar hareketli; kimi sabah koşusuna çıkmış, kimi yoga
+                    dersine gidiyor, kimi Tay boksu antrenmanına hazırlanıyor.
+                    Spor ruhunu her adımda hissediyorsunuz. Her köşesi hareketli ama asla kaotik değil; tam anlamıyla
+                    spor, sağlık ve iyi yaşamın merkezi diyebiliriz.
+                    <br><br>
+                    Bizim için Ta Iat Road, sadece bir cadde değil, güne keyifle başladığımız bir yer oldu.
+                    Kahvaltı konusunda biraz seçiciyiz; aslında istediğimiz çok basit; avokado, üstüne çırpılmış yumurta
+                    ve yanına taze meyve suyu.
+                    Tam da aradığımızı <strong>Latte Caffe</strong>’de bulduk. Yerelliğini koruyan, içtenliğiyle sizi
+                    hemen içine alan sağlıklı bir mekan.
+                    Porsiyonlar kocaman, yumurtalar inanılmaz lezzetliydi.
+                    Üstelik sadece kahvaltı değil, taze meyvelerden yapılan <strong>smoothieler</strong>, <strong>bowl
+                        çeşitleri</strong> ve <strong>tatlı</strong>ları da harikaydı.
+                    Fiyatlar da gayet makul: koca bir avokadolu yumurta tabağı ve taze meyve suyuna sadece 150 Baht
+                    ödedik.
+                </p><br><br>
+
+                <h4>Wat Chalong Tapınağı'nda Büyülenin</h4>
+                <p>Chalong’un en kutsal noktalarından biri olan <strong>Wat Chalong</strong>, Phuket’in en büyük ve en
+                    ünlü Budist
+                    tapınağı.
+                    19. yüzyılda inşa edilen bu tapınak, hem yerli halk hem de turistler için bir “ruhsal merkez” gibi.
+                    Renkli süslemeleri, detaylı mimarisi ve mistik atmosferiyle gerçekten etkileyici.
+
+                <div class="image-row">
+                    <img src="resimler/watchalong3.jpeg" alt="wat chalong 1">
+                    <img src="resimler/watchalong6.jpeg" alt="wat chalong 2">
+                    <img src="resimler/watchalong1.jpeg" alt="wat chalong 3">
+                </div><br>
+
+                <div class="text-image-row">
+                    <p>Tapınağın en dikkat çekici yapısı olan “Phra Mahathat Chedi” (veya Grand Pagoda) üç katlı yüksek
+                        bir kule şeklindedir. Bu pagodanın en üst katında, küçük cam bir muhafaza içinde Buda’ya ait
+                        kutsal bir kemik parçası (Buddha relic) sergileniyor. Bu parça, Sri Lanka hükümeti tarafından
+                        Tayland’a hediye edilmiş.<br><br>
+                        Ziyaretçiler genellikle merdivenleri çıkarak bu kata ulaşıyor, burada dua ediyor veya lotus
+                        çiçeğiyle saygılarını sunuyorlar. Pagodanın iç duvarları da oldukça etkileyici; Buda’nın
+                        yaşamını anlatan renkli duvar resimleriyle süslenmiş durumda.
+                    </p>
+                    <img src="resimler/watchalong2.jpeg" alt="Wat Chalong">
+                </div>
+
+                Tapınak, rahip Luang Pho Cham’a adanmış ve içeride onun balmumu heykeli bulunuyor.
+                Dilek dilemek için gelenler tütsüler yakıyor, çiçekler bırakıyor.
+                Bizim için Tayland’daki tapınak kültürünü ilk kez bu kadar yakından gözlemlemek büyüleyiciydi.<br>
+                <strong>Giriş ücretsizdir</strong>. Ancak ziyaret ederken omuz ve dizleri kapatan kıyafet giymeyi
+                unutmayın.
+                </p><br><br>
+
+                <h4>Big Budda'yı Ziyaret Edin ve Manzaranın Keyfini Çıkarın</h4>
+                <p><strong>Wat Chalong</strong> ziyaretinden sonra rotayı <strong>Big Buddha</strong>’ya çevirmek
+                    gerçekten harika bir plan olur. İki nokta birbirine oldukça yakın, bu yüzden genellikle aynı gün
+                    içinde rahatça gezilebiliyor.<br><br>
+
+                    Phuket’in simgelerinden biri olan <strong>Big Buddha</strong>, Nakkerd Tepesi’nin zirvesinde yer
+                    alıyor ve adanın
+                    dört bir yanından görülebilen devasa bir heykel. Tam <strong>45 metre yüksekliğindeki</strong> bu
+                    beyaz mermer
+                    Buddha, hem görkemiyle hem de bulunduğu yerin huzurlu atmosferiyle etkileyici. Zirveye vardığınızda,
+                    Karon ve Kata Plajları dahil olmak üzere adanın güneyine uzanan panoramik bir manzara sizi
+                    karşılıyor. Özellikle sabah erken saatlerde ya da gün batımında çıkarsanız, manzara gerçekten
+                    büyüleyici.<br><br>
+
+                    <strong>Big Buddha</strong>’ya motorla ya da araçla kolayca ulaşılabiliyor. Yolun son bölümü biraz
+                    dik ve kıvrımlı olsa da asfalt
+                    olduğu için rahat bir sürüş sunuyor.
+                </p>
+
+                <div class="text-image-row">
+                    <p>Biz gittiğimizde bölgede <strong>heyelan nedeniyle erişim kısıtlıydı</strong>, bu yüzden heykeli
+                        yalnızca belirli
+                        bir açıdan görebildik. Yine de o noktadan bile Phuket’in geniş manzarasını izlemek harikaydı.
+                        Gitmeden önce alanın açık olup olmadığını kontrol etmekte fayda var, çünkü zaman
+                        zaman bakım veya hava koşulları nedeniyle erişim sınırlandırılabiliyor.<br><br><br>
+                        Big Buddha, hem manzarasıyla hem de hissettirdiği <strong>dinginlikle</strong>, Wat Chalong’daki
+                        manevi
+                        atmosferin güzel bir devamı oluyor. Kesinlikle Phuket’in “ruhunu” hissetmek için mükemmel bir
+                        final
+                        noktası.
+                    </p>
+                    <img src="resimler/bigbudda.jpeg" alt="big budda">
+                </div><br><br>
+
+                <h4>Deneyim Sevenler İçin: Chalong Bay Rum Distillery</h4>
+                <img src="resimler/rom1.jpeg" alt="Chalong Bay Rum Distillery" class="section-img">
+                <p><strong>Chalong Bay Rom Evi</strong>, Phuket’te gezilecek, tadına bakılacak ve Tayland’ın rom
+                    üretimiyle ilgili
+                    kültürünü yakından tanıyabileceğin güzel bir durak. Eğer el yapımı içkilere meraklıysanız, üretim
+                    sürecini görmek, farklı rom çeşitlerini tatmak ve hatta kendi kokteylinizi hazırlamak istiyorsanız
+                    burası tam size göre.<br><br>
+
+                    Phuket’in Chalong bölgesinde yer alan bu butik damıtımevi, tamamen doğal yöntemlerle üretilen
+                    romlarıyla dikkat çekiyor. Kullanılan şeker kamışı yerel, endemik bir tür ve kimyasal gübre ya da
+                    böcek ilacı kullanılmadan yetiştiriliyor. Şeker kamışı elle toplanıyor ve yalnızca ilk sıkım suyu
+                    (first-press cane juice) kullanılıyor. Yani çoğu endüstriyel romda olduğu gibi pekmez değil, saf
+                    kamış suyu damıtılıyor. Üretim süreci <strong>Fransız tarzı bakır imbiklerle</strong> yürütülüyor ve
+                    bu da romlara kendine özgü bir aroma kazandırıyor. Genellikle “beyaz rom”
+                    (dinlendirilmemiş) üretiliyor; ancak yerel botaniklerle tatlandırılmış aromalı çeşitleri de mevcut.
+                    <br><br>
+
+                    Ziyaretçiler için günde birkaç kez düzenlenen rehberli turlar ve tadım seansları sayesinde hem romun
+                    üretim aşamalarını görebilir hem de farklı tatları deneyimleyebilirsiniz. Ayrıca dilerseniz kokteyl
+                    atölyelerine katılıp profesyonel eğitmenler eşliğinde kendi içkinizi hazırlayabilirsiniz.
+                    Tur sırasında üretim süreci anlatılıyor; fotoğraf çekmek yasak, ama bu gizemli hava deneyimi daha da
+                    özel kılıyor.
+
+                    <img src="resimler/rom3.jpeg" alt="Chalong Bay Rum Distillery" class="section-img">
+                    Deneyiminizi tesisin içinde yer alan bar&restoran kısmında bitirin; taze ve yerel malzemelerle hazırlanan
+                    Asya esintili yemekler gerçekten lezzetli.
+                </p>
+                <p style="color: white; font-size: 16px;">
+                    Daha fazla bilgi ve ziyaret detayları için resmi web sitesini ziyaret edebilirsiniz: 
+                    <a href="https://chalongbayrum.com" target="_blank" rel="noopener noreferrer" 
+                       style="color: white; font-weight: 600; text-decoration: underline; display: inline-flex; align-items: center; margin-left: 5px;">
+                      chalongbayrum.com <span style="margin-left: 5px; font-size: 14px;">&#8599;</span>
+                    </a>
+                  </p><br><br><br>
+                  
+                    
+
+
+
+
             </section>
 
             <section id="section5">
