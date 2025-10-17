@@ -1204,7 +1204,7 @@
             }
         }
 
-        /* Section resimleri tapınak resmi */
+        /* Section resimleri */
         .section-img {
             width: 100%;
             max-width: 900px;
@@ -1223,10 +1223,11 @@
         @media (max-width: 600px) {
             .section-img {
                 width: 100%;
+                aspect-ratio: 1 / 1;
                 margin: 15px 0;
                 height: auto;
                 /* yüksekliği otomatik yap */
-                object-fit: contain;
+                object-fit: cover;
             }
         }
 
