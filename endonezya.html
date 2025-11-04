@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-    <title>ASYA</title>
+    <title>Endonezya</title>
     <link rel="icon" type="image/png" sizes="64x64" href="resimler/favicon.png" />
     <link rel="icon" type="image/x-icon" href="resimler/favicon.ico" />
 
@@ -37,6 +37,7 @@
             position: relative;
             padding: 0 20px;
             border-bottom: 3px solid rgb(187, 186, 186);
+            
         }
 
         .nav-logo {
@@ -692,13 +693,12 @@
             display: flex;
             flex-direction: column;
             height: 100%;
-            background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url(resimler/asyakapak.jpeg) no-repeat center center;
+            background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url(resimler/taylandkapak.jpeg) no-repeat center center;
             background-size: 85% auto;
-            background-position: center 100%;
+            background-position: center 70%;
             min-height: 85vh;
             margin-bottom: 70px;
             position: relative;
-            filter: contrast(1.2) brightness(1.05);
 
         }
 
@@ -713,7 +713,7 @@
             font-size: 40px;
             font-family: 'Montserrat', sans-serif;
             font-weight: 500;
-            color: rgba(255, 255, 255, 0.85);
+            color: white;
             line-height: 0.6;
             margin-bottom: 10px;
             letter-spacing: 1px;
@@ -740,11 +740,11 @@
             margin-right: 110px;
             padding: 13px 23px;
             /* İç boşluk */
-            border: 2px solid rgba(255, 255, 255, 0.85);
+            border: 2px solid white;
             border-radius: 3px;
             /* Köşeleri yuvarlatır */
             background-color: none;
-            color: rgba(255, 255, 255, 0.85);
+            color: white;
             /* Yazı rengi */
             width: 270px;
             font-weight: bold;
@@ -771,8 +771,8 @@
             display: inline-block;
             width: 10px;
             height: 10px;
-            border-right: 2px solid rgba(255, 255, 255, 0.85);
-            border-bottom: 2px solid rgba(255, 255, 255, 0.85);
+            border-right: 2px solid white;
+            border-bottom: 2px solid white;
             transform: rotate(45deg);
             /* Güneydoğu yönü */
             transition: transform 0.3s ease;
@@ -795,7 +795,7 @@
         }
 
         .shop-link {
-            position: fixed;
+            position: absolute;
             right: 60px;
             /* sağdan boşluk */
             top: 50%;
@@ -806,7 +806,7 @@
             /* dönüş merkezi */
             font-size: 16px;
             font-weight: 500;
-            color: rgba(255, 255, 255, 0.85);
+            color: white;
             background: none;
             /* arka plan yok */
             border: none;
@@ -823,8 +823,8 @@
             display: inline-block;
             width: 12px;
             height: 12px;
-            border-top: 2px solid rgba(255, 255, 255, 0.85);
-            border-left: 2px solid rgba(255, 255, 255, 0.85);
+            border-top: 2px solid white;
+            border-left: 2px solid white;
             transform: rotate(90deg);
             /* kuzeybatıya yön */
             position: relative;
@@ -851,111 +851,45 @@
             }
         }
 
-      /* Tablet ve mobil düzenlemeler */
-@media (max-width: 1024px) {
-  #info-container {
-    background-size: cover;
-    background-position: center; 
-    min-height: 70vh;
-  }
+        @media (max-width: 900px) {
+            .destination-box {
+                position: static;
+                /* paragrafın altına gelsin */
+                margin: 20px auto 0;
+                /* üstten boşluk + ortalama */
+                width: calc(100% - 40px);
+                /* sağdan ve soldan 20px boşluk */
+                max-width: 500px;
+                /* istersen çok büyük ekranda fazla uzamasın */
+                box-sizing: border-box;
+                /* padding dahil */
+                display: block;
+                text-align: center;
+                margin-bottom: 10px;
+            }
+        }
 
-  .title-text {
-    margin-left: 20px;
-    margin-right: 20px;
-  }
+        @media (max-width: 900px) {
+            .title-text {
+                margin-left: 20px;
+                /* sola boşluk */
+                margin-right: 20px;
+                /* sağdan da nefes aldır */
+                text-align: left;
+                /* yazıyı sola yasla */
+            }
 
-  #info-container h1 {
-    font-size: 28px;
-    line-height: 1.2;
-  }
+            #info-container h1 {
+                font-size: 32px;
+                /* mobilde daha küçük boyut */
+            }
 
-  #info-container p {
-    font-size: 14px;
-  }
-
-  .destination-box {
-    position: static;       /* absolute kaldırıldı */
-    margin-top: 20px;       /* yazıların altına boşluk */
-    margin-right: 0;
-    width: fit-content;     /* genişlik içeriğe göre */
-    padding: 10px 18px;
-    font-size: 12px;
-    letter-spacing: 2px;
-    align-self: flex-start; /* sola hizala (dilersen center yapabilirsin) */
-  }
-
-  .shop-link {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    transform: none;
-    font-size: 14px;
-    background: rgba(0,0,0,0.6);
-    padding: 8px 14px;
-    border-radius: 6px;
-  }
-}
-
-/* Küçük telefonlar */
-@media (max-width: 900px) {
-      .destination-box {
-        position: static;
-        /* paragrafın altına gelsin */
-        margin: 20px auto 0;
-        /* üstten boşluk + ortalama */
-        width: calc(100% - 40px);
-        /* sağdan ve soldan 20px boşluk */
-        max-width: 500px;
-        /* istersen çok büyük ekranda fazla uzamasın */
-        box-sizing: border-box;
-        /* padding dahil */
-        display: block;
-        text-align: center;
-        margin-bottom: 10px;
-      }
-    }
-
-    @media (max-width: 900px) {
-      .title-text {
-        margin-left: 20px;
-        /* sola boşluk */
-        margin-right: 20px;
-        /* sağdan da nefes aldır */
-        text-align: left;
-        /* yazıyı sola yasla */
-      }
-
-      #info-container h1 {
-        font-size: 32px;
-        /* mobilde daha küçük boyut */
-      }
-
-      #info-container p {
-        font-size: 14px;
-        /* mobilde daha okunabilir boyut */
-        line-height: 1.5;
-      }
-    }
-
-    #about-section {
-      padding: 60px 80px;
-      display: flex;
-      flex-direction: column;
-      gap: 40px;
-    }
-
-    #about-section h2 {
-      font-size: 32px;
-      font-weight: 550;
-      color: white;
-      margin-bottom: 15px;
-      font-family: monospace;
-      letter-spacing: 0.5px;
-      line-height: 1.4;
-    }
-
-
-
+            #info-container p {
+                font-size: 14px;
+                /* mobilde daha okunabilir boyut */
+                line-height: 1.5;
+            }
+        }
 
         #aboutbox-section {
             padding: 60px 80px;
@@ -972,159 +906,6 @@
             font-family: monospace;
             letter-spacing: 0.5px;
             line-height: 1.4;
-        }
-
-         #about-section {
-            padding: 60px 100px;
-            display: flex;
-            flex-direction: column;
-            gap: 40px;
-        }
-
-        #about-section h2 {
-            font-size: 32px;
-            font-weight: 550;
-            color: white;
-            margin-bottom: 15px;
-            font-family: monospace;
-            letter-spacing: 0.5px;
-            line-height: 1.4;
-        }
-
-        .destinations-container {
-            display: flex;
-            gap: 30px;
-            justify-content: space-between;
-
-        }
-
-        .destination-card {
-            flex: 1;
-            height: 600px;
-            position: relative;
-
-            overflow: hidden;
-            display: flex;
-            align-items: flex-end;
-            transition: transform 0.3s ease;
-        }
-
-        .destination-card img {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: 1;
-            transition: transform 0.5s ease;
-        }
-
-        /* Karanlık efekt için overlay */
-        .destination-card::after {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.4);
-            /* varsayılan karanlık */
-            transition: background 0.3s ease;
-            z-index: 1;
-        }
-
-        /* Hover olunca hafif aydınlansın */
-        .destination-card:hover::after {
-            background: rgba(0, 0, 0, 0.2);
-        }
-
-        .card-content {
-            position: relative;
-            z-index: 2;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px;
-            width: 100%;
-        }
-
-        .card-content h3 {
-            margin: 0;
-            color: white;
-            font-size: 20px;
-            font-family: monospace;
-            font-weight: 300px;
-            margin-left: 10px;
-
-        }
-
-        .post-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 40px;
-            color: rgba(255, 255, 255, 0.85);
-            font-weight: 300;
-            text-decoration: none;
-            font-family: monospace;
-            letter-spacing: 3px;
-            margin-right: 10px;
-        }
-
-        .arrow {
-            display: inline-block;
-            width: 10px;
-            height: 10px;
-            border-right: 2px solid rgba(255, 255, 255, 0.85);
-            border-bottom: 2px solid rgba(255, 255, 255, 0.85);
-            transform: rotate(-90deg);
-            /* kuzeydoğu ok */
-        }
-
-        .arrow::after {
-            content: '';
-            position: absolute;
-            width: 2px;
-            height: 14px;
-            background-color: currentColor;
-            left: 50%;
-            top: -2px;
-            transform: translateX(-50%) rotate(-45deg);
-        }
-
-        @media (max-width: 900px) {
-            #about-section {
-                padding: 0 15px;
-                /* Bölüm kenarlarından hafif boşluk */
-            }
-
-            #about-section h2 {
-                font-size: 25px;
-                text-align: left;
-                /* Sola yaslı */
-                margin-top: 40px;
-                /* Üstte daha çok boşluk */
-                margin-bottom: 3px;
-                /* Kartlara daha yakın */
-                margin-left: 5px;
-                line-height: 1.2;
-            }
-
-            .destinations-container {
-                flex-direction: column;
-                gap: 35px;
-            }
-
-            .destination-card {
-                width: 100%;
-                /* Tam ekran genişliği */
-                aspect-ratio: 1 / 1;
-                /* Kare görünüm */
-
-            }
-
-            .destination-card img {
-                object-fit: cover;
-                width: 100%;
-                height: 100%;
-            }
         }
     </style>
 </head>
@@ -1149,9 +930,9 @@
                 <a href="IstikametleriGor.html" class="nav-link has-arrow">İSTİKAMET</a>
                 <div class="dropdown">
                     <div class="nav-item has-submenu">
-                        <a href="asya.html" class="nav-link">ASYA</a>
+                        <a href="#" class="nav-link">ASYA</a>
                         <div class="dropdown-sub">
-                            <a href="tayland.html">Tayland</a>
+                            <a href="#">Tayland</a>
                             <a href="#">Endonezya</a>
                         </div>
                     </div>
@@ -1264,17 +1045,26 @@
 
     <div id="main-content">
         <div id="info-container">
+            <div class="top-menu">
+                <a href="anasayfa.html">ANA SAYFA</a>
+                <span>|</span>
+                <a href="asya.html">ASYA</a>
+                <span>|</span>
+                <span class="current-page">ENDONEZYA</span>
+            </div>
+
 
             <div class="title-text">
 
-                <h1>ASYA</h1>
-                <p>En güzel seyahat paylaşımlarımızla Asya’nın zengin kültürünü<br>
-                    ve doğal güzelliklerini keşfe çıkın.</p>
+                <h1>Endonezya</h1>
+                <p>Endonezya’ya bir yolculuğa çıkın; bakir plajlarında güneşin<br>
+                   tadını çıkarın, yemyeşil yağmur ormanlarında yürüyüş yapın<br>
+                   ve canlı kültürüne kendinizi kaptırın.</p>
 
             </div>
 
-            <a href="#about-section" class="destination-box">
-                ÜLKENİZİ SEÇİN
+            <a href="#aboutbox-section" class="destination-box">
+                İÇERİKLERİ GÖR
                 <span class="destination-arrow"></span>
             </a>
 
@@ -1282,42 +1072,6 @@
                 MAĞAZAMIZ
                 <span class="shop-arrow"></span>
             </a>
-        </div>
-
-        <div id="about-section">
-            <h2>Bir İstikamet Seçin</h2>
-            <div class="destinations-container">
-                <div class="destination-card">
-                    <img src="resimler/web9.jpeg" alt="İstikamet 1">
-                    <div class="card-content">
-                        <h3>Endonezya</h3>
-                        <a href="#" class="post-btn">
-                            Postu Gör
-                            <span class="arrow"></span>
-                        </a>
-                    </div>
-                </div>
-                <div class="destination-card">
-                    <img src="resimler/taylandkapak.jpeg" alt="İstikamet 6">
-                    <div class="card-content">
-                        <h3>Tayland</h3>
-                        <a href="tayland.html" class="post-btn">
-                            Postu Gör
-                            <span class="arrow"></span>
-                        </a>
-                    </div>
-                </div>
-                <div class="destination-card">
-                    <img src="resimler/vietnamkapak.jpeg" alt="İstikamet 3">
-                    <div class="card-content">
-                        <h3>Vietnam</h3>
-                        <a href="#" class="post-btn">
-                            Postu Gör
-                            <span class="arrow"></span>
-                        </a>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 
@@ -1485,14 +1239,7 @@
             });
         }
 
-
-        document.querySelector('.destination-box').addEventListener('click', function (e) {
-            e.preventDefault(); // Linkin anında atlamasını engeller
-            document.querySelector('#about-section').scrollIntoView({
-                behavior: 'smooth', // yumuşak kayma
-                block: 'start'      // bölümün üstten başlamasını sağlar
-            });
-        });
+        
     </script>
 </body>
 
