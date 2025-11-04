@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <title>Koh Lanta</title>
+    <link rel="icon" type="image/png" sizes="64x64" href="resimler/favicon.png" />
+    <link rel="icon" type="image/x-icon" href="resimler/favicon.ico" />
 
     <style>
         html,
@@ -1223,7 +1225,7 @@
         @media (max-width: 600px) {
             .section-img {
                 width: 100%;
-                aspect-ratio: 1 / 1;
+                
                 margin: 15px 0;
                 height: auto;
                 /* yüksekliği otomatik yap */
@@ -1239,20 +1241,21 @@
 
         }
 
-        .phuket-map {
+        .KohLanta-map {
             margin-top: 40px;
             padding: 20px;
-            text-align: flex-start;
+
             font-size: 30px;
         }
 
         .map-container {
             display: flex;
-            justify-content: flex;
+            justify-content: flex-start;
             align-items: flex-start;
             gap: 30px;
-            flex-wrap: wrap;
+            flex-wrap: nowrap;
             margin-top: 20px;
+
         }
 
         .map-container iframe {
@@ -1486,7 +1489,7 @@
             <ul class="toc-list" id="tocList">
                 <li><a href="#section1">Koh Lanta Seyahat Rehberi</a></li>
                 <li><a href="#section2">Koh Lanta Gezi Haritası</a></li>
-                <li><a href="#section3">Koh Lanta’nın Büyüleyici Plajları</a></li>
+                <li><a href="#section3">Koh Lanta Plajları</a></li>
                 <li><a href="#section4">Koh Lanta Old Town</a></li>
                 <li><a href="#section5">Doğa ve Mu Koh Lanta Milli Parkı</a></li>
                 <li><a href="#section6">Yeme - İçme Tavsiyeleri</a></li>
@@ -1605,12 +1608,39 @@
 
                 </p>
             </section>
-            <section id="section2"></section>
-            <h2>Koh Lanta Gezi Haritası</h2>
+
+            <section id="section2" class="KohLanta-map">
+                <h2>Koh Lanta Gezi Haritası</h2>
+                <p><strong>Koh Lanta</strong>’da kaybolmak bile keyifli ama yine de küçük bir rehber fena olmaz.
+                    Haritamızda
+                    en sevdiğimiz durakları bulabilir, kendi keşif rotanızı oluşturabilirsiniz. Belki sizin favoriniz de
+                    bambaşka bir köşe olur!</p>
+
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/d/embed?mid=1c0yD9wujB4-GZmviH5lBvNGzfSSLQBI&ehbc=2E312F"
+                        width="640" height="480"></iframe>
+
+                    <div class="map-list">
+                        <div class="point"><span class="circle">1</span> Klong Jark Beach</div>
+                        <div class="point"><span class="circle">2</span> Nui Bay</div>
+                        <div class="point"><span class="circle">3</span> Long Beach</div>
+                        <div class="point"><span class="circle">4</span> Mu Ko Lanta Milli Parkı</div>
+                        <div class="point"><span class="circle">5</span> Koh Lanta Old Town</div>
+                        <div class="point"><span class="circle">6</span> One World Bungalows</div>
+                        <div class="point"><span class="circle">7</span> Galapagos Cozy and Healthy</div>
+                        <div class="point"><span class="circle">8</span> Tuesday Morning / Small Talk Cafe & Chill Out
+                        </div>
+                        <div class="point"><span class="circle">9</span> Pinto Restoran</div>
+                        <div class="point"><span class="circle">10</span> U-Bay Kafe</div>
+                        <div class="point"><span class="circle">11</span> Kung Fu Bar</div>
+
+                    </div>
+                </div>
+            </section>
 
 
             <section id="section3">
-                <h2>Koh Lanta’nın Plajları</h2>
+                <h2>Koh Lanta Plajları</h2>
                 <p>Koh Lanta, adanın sakin ve huzurlu atmosferini en iyi şekilde yansıtan plajlara sahip. Geniş
                     kumsalları, turkuaz suları ve yemyeşil palmiye ağaçlarıyla adeta tropik bir cennet. Nerede
                     olursanız olun, hemen denize girebileceğiniz sakin
@@ -1707,7 +1737,16 @@
 
 
                 <p> Nui Bay, Koh Lanta’nın doğallığını en saf haliyle yaşamak isteyenler için adeta gizli bir cennet.
-                    Sessizliği, sakinliği ve doğallığıyla adanın en huzurlu duraklarından biri.</p><br><br><br>
+                    Sessizliği, sakinliği ve doğallığıyla adanın en huzurlu duraklarından biri.</p><br>
+
+                <h4>Long Beach</h4>
+                <p><strong>Long Beach (Phra Ae Beach)</strong>, Koh Lanta’nın en uzun ve en popüler plajıdır. Altın rengi kumları ve
+                    tertemiz deniziyle hem yüzmek hem de gün batımını izlemek ve sahil boyunca
+                    uzanan palmiye ağaçlarının arasında çok sayıda <strong>kafe, bar ve konaklama seçeneklerinin</strong> keyfini çıkaracağınız bir yer. Akşamları
+                    kıyıda renkli <strong>ışık şovları, canlı müzikler ve kokteyl barlarla</strong> hareketli bir atmosfer oluşur. Diğer
+                    sakin koylara göre daha kalabalık olsa da, Long Beach enerjisiyle Koh Lanta’nın canlı yüzünü
+                    deneyimlemek isteyenler için ideal bir duraktır.</p>
+                <br><br><br>
 
 
             </section>
@@ -1968,38 +2007,40 @@
                     Koh Lanta aşık olmamak neredeyse imkansız. Burada herkes için yapılacak bir şey mutlaka var. Yalnız
                     seyahat ediyor olun, bir çift olarak ya da ailenizle birlikte, aradığınız her şeyi Koh Lanta’da
                     bulacağınıza emin olabilirsiniz.<br><br>
-                    Peki, senin Koh Lanta’daki en sevdiğin yer hangisi ve neden? Aşağıya yorum bırakın, biz de duymak isteriz!
+                    Peki, senin Koh Lanta’daki en sevdiğin yer hangisi ve neden? Aşağıya yorum bırakın, biz de duymak
+                    isteriz!
 
                 </p>
 
 
             </section><br><br>
 
-           <!-- Yorum Yaz Kısmı -->
-<section id="yorum-yaz" style="background-color: rgb(24, 24, 24); padding: 40px 20px; margin-top: 60px; color: white;">
-    <div style="max-width: 700px; margin: 0 auto;">
-        <h2 style="text-align: left; margin-bottom: 22px;">Yorum Yaz</h2>
-        <p style="text-align: left; font-size: 14px; color: #aaa;">
-            E-posta adresiniz yayımlanmayacaktır. Gerekli alanlar * ile işaretlenmiştir.
-        </p>
-        <form action="#" method="post" style="display: flex; flex-direction: column; gap: 25px; margin-top: 20px;">
-            <textarea name="yorum" placeholder="Yorumunuz*" required 
-                style="width: 100%; height: 250px; padding: 10px; font-size: 14px; 
+            <!-- Yorum Yaz Kısmı -->
+            <section id="yorum-yaz"
+                style="background-color: rgb(24, 24, 24); padding: 40px 20px; margin-top: 60px; color: white;">
+                <div style="max-width: 700px; margin: 0 auto;">
+                    <h2 style="text-align: left; margin-bottom: 22px;">Yorum Yaz</h2>
+                    <p style="text-align: left; font-size: 14px; color: #aaa;">
+                        E-posta adresiniz yayımlanmayacaktır. Gerekli alanlar * ile işaretlenmiştir.
+                    </p>
+                    <form action="#" method="post"
+                        style="display: flex; flex-direction: column; gap: 25px; margin-top: 20px;">
+                        <textarea name="yorum" placeholder="Yorumunuz*" required
+                            style="width: 100%; height: 250px; padding: 10px; font-size: 14px; 
                        border: none; box-shadow: inset 0 0 0 0.5px white; background-color: rgb(24, 24, 24); color: white;"></textarea>
-            <input type="text" name="isim" placeholder="İsim" 
-                style="width: 100%; height: 50px; padding: 10px; font-size: 14px; 
+                        <input type="text" name="isim" placeholder="İsim"
+                            style="width: 100%; height: 50px; padding: 10px; font-size: 14px; 
                        border: none; box-shadow: inset 0 0 0 0.5px white; background-color: rgb(24, 24, 24); color: white;">
-            <input type="email" name="email" placeholder="E-posta"  
-                style="width: 100%; height: 50px; padding: 10px; font-size: 14px; 
+                        <input type="email" name="email" placeholder="E-posta"
+                            style="width: 100%; height: 50px; padding: 10px; font-size: 14px; 
                        border: none; box-shadow: inset 0 0 0 0.5px white; background-color: rgb(24, 24, 24); color: white;">
-            <button type="submit" 
-                style="width: 33%; padding: 12px; background-color: transparent; color: white; 
+                        <button type="submit" style="width: 33%; padding: 12px; background-color: transparent; color: white; 
                        border: none; box-shadow: inset 0 0 0 0.5px white; font-size: 14px; cursor: pointer;">
-                GÖNDER
-            </button>
-        </form>
-    </div>
-</section>
+                            GÖNDER
+                        </button>
+                    </form>
+                </div>
+            </section>
 
 
         </div>
