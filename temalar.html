@@ -671,7 +671,7 @@
             margin-bottom: 70px;
             filter: contrast(1.2) brightness(1.05);
         }
-        
+
 
         .title-text {
             margin-top: auto;
@@ -861,6 +861,187 @@
                 line-height: 1.5;
             }
         }
+
+        #about-section {
+            padding: 60px 100px;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        #about-section h2 {
+            font-size: 32px;
+            font-weight: 550;
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 15px;
+            font-family: monospace;
+            letter-spacing: 0.5px;
+            line-height: 1.4;
+        }
+
+        .destinations-container {
+            display: flex;
+            gap: 30px;
+            justify-content: space-between;
+
+        }
+
+        .destination-card {
+            flex: 1;
+            height: 600px;
+            position: relative;
+            cursor: pointer;
+            overflow: hidden;
+            display: flex;
+            align-items: flex-end;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .destination-card img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+            transition: transform 0.5s ease;
+        }
+
+        /* Karanlık efekt için overlay */
+        .destination-card::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.4);
+            /* varsayılan karanlık */
+            transition: background 0.3s ease;
+            z-index: 1;
+        }
+
+        /* Hover olunca hafif aydınlansın */
+        .destination-card:hover::after {
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        html {
+  -webkit-text-size-adjust: 100%;
+}
+
+        .card-content {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            width: 100%;
+        }
+
+        .card-content h3 {
+            margin: 0;
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 20px;
+            font-family: monospace;
+            font-weight: 300px;
+            margin-left: 10px;
+
+        }
+
+        .post-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 40px;
+            color: rgba(255, 255, 255, 0.85);
+            font-weight: 300;
+            text-decoration: none;
+            font-family: monospace;
+            letter-spacing: 3px;
+            margin-right: 10px;
+        }
+
+        .arrow {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-right: 2px solid rgba(255, 255, 255, 0.85);
+            border-bottom: 2px solid rgba(255, 255, 255, 0.85);
+            transform: rotate(-90deg);
+            /* kuzeydoğu ok */
+        }
+
+        .arrow::after {
+            content: '';
+            position: absolute;
+            width: 2px;
+            height: 14px;
+            background-color: currentColor;
+            left: 50%;
+            top: -2px;
+            transform: translateX(-50%) rotate(-45deg);
+        }
+
+        @media (max-width: 900px) {
+            #about-section {
+                padding: 0 15px;
+                /* Bölüm kenarlarından hafif boşluk */
+            }
+
+            #about-section h2 {
+                font-size: 25px;
+                text-align: left;
+                /* Sola yaslı */
+                margin-top: 40px;
+                /* Üstte daha çok boşluk */
+                margin-bottom: 3px;
+                /* Kartlara daha yakın */
+                margin-left: 5px;
+                line-height: 1.2;
+            }
+
+            .destinations-container {
+                flex-direction: column;
+                gap: 35px;
+            }
+
+            .destination-card {
+                width: 100%;
+                /* Tam ekran genişliği */
+                aspect-ratio: 1 / 1;
+                /* Kare görünüm */
+
+            }
+
+            .destination-card img {
+                object-fit: cover;
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        .section-divider {
+            border: 0;
+            height: 0.5px;
+            background: rgba(200, 200, 200, 0.9);
+            margin: 100px 0;
+            width: 100vw;
+            position: relative;
+            left: 50%;
+            right: 50%;
+            transform: translateX(-50%);
+            margin-bottom: 20px;
+        }
+
+        #contact-section {
+            display: flex;
+            justify-content: space-between;
+            /* Sol ve sağ kutuları ayırır */
+            align-items: flex-start;
+            gap: 20px;
+            padding: 40px 50px;
+            flex-wrap: wrap;
+            /* Küçük ekranlarda alt alta geçmesini sağlar */
+        }
     </style>
 </head>
 
@@ -1003,7 +1184,7 @@
 
                 <h1>TEMALAR</h1>
                 <p>Keşfetmeye hazır mısınız? Temalarına göre düzenlenen<br>
-                   gönderilerimizle aradığınızı kolayca bulun!</p>
+                    gönderilerimizle aradığınızı kolayca bulun!</p>
 
             </div>
 
@@ -1017,179 +1198,206 @@
                 <span class="shop-arrow"></span>
             </a>
         </div>
+
+        <div id="about-section">
+            <h2>Bir Tema Seçin</h2>
+            <div class="destinations-container">
+                <div class="destination-card" data-link="endonezya.html">
+                    <img src="resimler/web9.jpeg" alt="İstikamet 1">
+                    <div class="card-content">
+                        <h3>Seyahat Kaynkaları</h3>
+                        <a href="#" class="post-btn">
+                            Postu Gör
+                            <span class="arrow"></span>
+                        </a>
+                    </div>
+                </div>
+                <div class="destination-card" data-link="makedonya.html">
+                    <img src="resimler/web7.jpeg" alt="İstikamet 2">
+                    <div class="card-content">
+                        <h3>Ekosistem</h3>
+                        <a href="#" class="post-btn">
+                            Postu Gör
+                            <span class="arrow"></span>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
     </div>
 
-    <script>
-        const menuToggle = document.getElementById('menuToggle');
-    const mainMenu = document.getElementById('mainMenu');
-    const closeMain = document.getElementById('closeMain');
-    const openIstikamet = document.getElementById('openIstikamet');
-    const istikametMenu = document.getElementById('istikametMenu');
-    const backIstikamet = document.getElementById('backIstikamet');
+        <script>
+            const menuToggle = document.getElementById('menuToggle');
+            const mainMenu = document.getElementById('mainMenu');
+            const closeMain = document.getElementById('closeMain');
+            const openIstikamet = document.getElementById('openIstikamet');
+            const istikametMenu = document.getElementById('istikametMenu');
+            const backIstikamet = document.getElementById('backIstikamet');
 
-    menuToggle.addEventListener('click', () => {
-      mainMenu.classList.add('active');
-    });
+            menuToggle.addEventListener('click', () => {
+                mainMenu.classList.add('active');
+            });
 
-    closeMain.addEventListener('click', () => {
-      mainMenu.classList.remove('active');
-    });
+            closeMain.addEventListener('click', () => {
+                mainMenu.classList.remove('active');
+            });
 
-    openIstikamet.addEventListener('click', (e) => {
-      e.preventDefault();
-      mainMenu.classList.remove('active');
-      istikametMenu.classList.add('active');
-    });
+            openIstikamet.addEventListener('click', (e) => {
+                e.preventDefault();
+                mainMenu.classList.remove('active');
+                istikametMenu.classList.add('active');
+            });
 
-    backIstikamet.addEventListener('click', () => {
-      istikametMenu.classList.remove('active');
-      mainMenu.classList.add('active');
-    });
+            backIstikamet.addEventListener('click', () => {
+                istikametMenu.classList.remove('active');
+                mainMenu.classList.add('active');
+            });
 
-    const searchInput = document.getElementById('searchInput');
-    const clearBtn = document.getElementById('clearBtn');
+            const searchInput = document.getElementById('searchInput');
+            const clearBtn = document.getElementById('clearBtn');
 
-    if (searchInput && clearBtn) {
-      searchInput.addEventListener('input', () => {
-        if (searchInput.value.trim() !== "") {
-          clearBtn.style.display = 'block';
-        } else {
-          clearBtn.style.display = 'none';
-        }
-      });
+            if (searchInput && clearBtn) {
+                searchInput.addEventListener('input', () => {
+                    if (searchInput.value.trim() !== "") {
+                        clearBtn.style.display = 'block';
+                    } else {
+                        clearBtn.style.display = 'none';
+                    }
+                });
 
-      clearBtn.addEventListener('click', () => {
-        searchInput.value = "";
-        clearBtn.style.display = 'none';
+                clearBtn.addEventListener('click', () => {
+                    searchInput.value = "";
+                    clearBtn.style.display = 'none';
 
-        searchInput.focus();
-      });
-    }
-    const goBtn = document.getElementById('goBtn');
+                    searchInput.focus();
+                });
+            }
+            const goBtn = document.getElementById('goBtn');
 
-    if (searchInput && clearBtn && goBtn) {
-      searchInput.addEventListener('input', () => {
-        if (searchInput.value.trim() !== "") {
-          clearBtn.style.display = 'block';
-          goBtn.style.display = 'none';
-        } else {
-          clearBtn.style.display = 'none';
-          goBtn.style.display = 'block';
-        }
-      });
+            if (searchInput && clearBtn && goBtn) {
+                searchInput.addEventListener('input', () => {
+                    if (searchInput.value.trim() !== "") {
+                        clearBtn.style.display = 'block';
+                        goBtn.style.display = 'none';
+                    } else {
+                        clearBtn.style.display = 'none';
+                        goBtn.style.display = 'block';
+                    }
+                });
 
-      clearBtn.addEventListener('click', () => {
-        searchInput.value = "";
-        clearBtn.style.display = 'none';
-        goBtn.style.display = 'block';
-        searchInput.focus();
-      });
-    }
-    menuToggle.addEventListener('click', () => {
-      mainMenu.classList.add('active');
-      document.body.classList.add('menu-open');
-    });
+                clearBtn.addEventListener('click', () => {
+                    searchInput.value = "";
+                    clearBtn.style.display = 'none';
+                    goBtn.style.display = 'block';
+                    searchInput.focus();
+                });
+            }
+            menuToggle.addEventListener('click', () => {
+                mainMenu.classList.add('active');
+                document.body.classList.add('menu-open');
+            });
 
-    closeMain.addEventListener('click', () => {
-      mainMenu.classList.remove('active');
-      document.body.classList.remove('menu-open');
-    });
+            closeMain.addEventListener('click', () => {
+                mainMenu.classList.remove('active');
+                document.body.classList.remove('menu-open');
+            });
 
-    //mobil için nav-search
-    const searchInputMobile = document.getElementById('searchInputMobile');
-    const clearBtnMobile = document.getElementById('clearBtnMobile');
-    const goBtnMobile = document.getElementById('goBtnMobile');
+            //mobil için nav-search
+            const searchInputMobile = document.getElementById('searchInputMobile');
+            const clearBtnMobile = document.getElementById('clearBtnMobile');
+            const goBtnMobile = document.getElementById('goBtnMobile');
 
-    if (searchInputMobile && clearBtnMobile && goBtnMobile) {
-      searchInputMobile.addEventListener('input', () => {
-        if (searchInputMobile.value.trim() !== "") {
-          clearBtnMobile.style.display = 'block';
-          goBtnMobile.style.display = 'none';
-        } else {
-          clearBtnMobile.style.display = 'none';
-          goBtnMobile.style.display = 'block';
-        }
-      });
+            if (searchInputMobile && clearBtnMobile && goBtnMobile) {
+                searchInputMobile.addEventListener('input', () => {
+                    if (searchInputMobile.value.trim() !== "") {
+                        clearBtnMobile.style.display = 'block';
+                        goBtnMobile.style.display = 'none';
+                    } else {
+                        clearBtnMobile.style.display = 'none';
+                        goBtnMobile.style.display = 'block';
+                    }
+                });
 
-      clearBtnMobile.addEventListener('click', () => {
-        searchInputMobile.value = "";
-        clearBtnMobile.style.display = 'none';
-        goBtnMobile.style.display = 'block';
-        searchInputMobile.focus();
-      });
-    }
+                clearBtnMobile.addEventListener('click', () => {
+                    searchInputMobile.value = "";
+                    clearBtnMobile.style.display = 'none';
+                    goBtnMobile.style.display = 'block';
+                    searchInputMobile.focus();
+                });
+            }
 
-    // İstikamet için nav-search
-    const searchInputIstikamet = document.getElementById('searchInputIstikamet');
-    const clearBtnIstikamet = document.getElementById('clearBtnIstikamet');
-    const goBtnIstikamet = document.getElementById('goBtnIstikamet');
+            // İstikamet için nav-search
+            const searchInputIstikamet = document.getElementById('searchInputIstikamet');
+            const clearBtnIstikamet = document.getElementById('clearBtnIstikamet');
+            const goBtnIstikamet = document.getElementById('goBtnIstikamet');
 
-    if (searchInputIstikamet && clearBtnIstikamet && goBtnIstikamet) {
-      searchInputIstikamet.addEventListener('input', () => {
-        if (searchInputIstikamet.value.trim() !== "") {
-          clearBtnIstikamet.style.display = 'block';
-          goBtnIstikamet.style.display = 'none';
-        } else {
-          clearBtnIstikamet.style.display = 'none';
-          goBtnIstikamet.style.display = 'block';
-        }
-      });
+            if (searchInputIstikamet && clearBtnIstikamet && goBtnIstikamet) {
+                searchInputIstikamet.addEventListener('input', () => {
+                    if (searchInputIstikamet.value.trim() !== "") {
+                        clearBtnIstikamet.style.display = 'block';
+                        goBtnIstikamet.style.display = 'none';
+                    } else {
+                        clearBtnIstikamet.style.display = 'none';
+                        goBtnIstikamet.style.display = 'block';
+                    }
+                });
 
-      clearBtnIstikamet.addEventListener('click', () => {
-        searchInputIstikamet.value = "";
-        clearBtnIstikamet.style.display = 'none';
-        goBtnIstikamet.style.display = 'block';
-        searchInputIstikamet.focus();
-      });
-    }
+                clearBtnIstikamet.addEventListener('click', () => {
+                    searchInputIstikamet.value = "";
+                    clearBtnIstikamet.style.display = 'none';
+                    goBtnIstikamet.style.display = 'block';
+                    searchInputIstikamet.focus();
+                });
+            }
 
-    const openAsya = document.getElementById('openAsya');
-    const asyaMenu = document.getElementById('asyaMenu');
-    const backAsya = document.getElementById('backAsya');
+            const openAsya = document.getElementById('openAsya');
+            const asyaMenu = document.getElementById('asyaMenu');
+            const backAsya = document.getElementById('backAsya');
 
-    openAsya.addEventListener('click', (e) => {
-      e.preventDefault();
-      istikametMenu.classList.remove('active'); // İSTİKAMET overlay gizle
-      asyaMenu.classList.add('active');         // ASYA overlay göster
-    });
+            openAsya.addEventListener('click', (e) => {
+                e.preventDefault();
+                istikametMenu.classList.remove('active'); // İSTİKAMET overlay gizle
+                asyaMenu.classList.add('active');         // ASYA overlay göster
+            });
 
-    backAsya.addEventListener('click', () => {
-      asyaMenu.classList.remove('active');      // ASYA overlay gizle
-      istikametMenu.classList.add('active');    // İSTİKAMET overlay göster
-    });
+            backAsya.addEventListener('click', () => {
+                asyaMenu.classList.remove('active');      // ASYA overlay gizle
+                istikametMenu.classList.add('active');    // İSTİKAMET overlay göster
+            });
 
-    // ASYA Overlay Search Box
-    const searchInputAsya = document.getElementById('searchInputAsya');
-    const clearBtnAsya = document.getElementById('clearBtnAsya');
-    const goBtnAsya = document.getElementById('goBtnAsya');
+            // ASYA Overlay Search Box
+            const searchInputAsya = document.getElementById('searchInputAsya');
+            const clearBtnAsya = document.getElementById('clearBtnAsya');
+            const goBtnAsya = document.getElementById('goBtnAsya');
 
-    if (searchInputAsya && clearBtnAsya && goBtnAsya) {
-      searchInputAsya.addEventListener('input', () => {
-        if (searchInputAsya.value.trim() !== "") {
-          clearBtnAsya.style.display = 'block';
-          goBtnAsya.style.display = 'none';
-        } else {
-          clearBtnAsya.style.display = 'none';
-          goBtnAsya.style.display = 'block';
-        }
-      });
+            if (searchInputAsya && clearBtnAsya && goBtnAsya) {
+                searchInputAsya.addEventListener('input', () => {
+                    if (searchInputAsya.value.trim() !== "") {
+                        clearBtnAsya.style.display = 'block';
+                        goBtnAsya.style.display = 'none';
+                    } else {
+                        clearBtnAsya.style.display = 'none';
+                        goBtnAsya.style.display = 'block';
+                    }
+                });
 
-      clearBtnAsya.addEventListener('click', () => {
-        searchInputAsya.value = "";
-        clearBtnAsya.style.display = 'none';
-        goBtnAsya.style.display = 'block';
-        searchInputAsya.focus();
-      });
-    }
+                clearBtnAsya.addEventListener('click', () => {
+                    searchInputAsya.value = "";
+                    clearBtnAsya.style.display = 'none';
+                    goBtnAsya.style.display = 'block';
+                    searchInputAsya.focus();
+                });
+            }
 
-    document.querySelector('.destination-box').addEventListener('click', function (e) {
-      e.preventDefault(); // Linkin anında atlamasını engeller
-      document.querySelector('#about-section').scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
-      });
-    });
-    </script>
+            document.querySelector('.destination-box').addEventListener('click', function (e) {
+                e.preventDefault(); // Linkin anında atlamasını engeller
+                document.querySelector('#about-section').scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            });
+        </script>
 
 </body>
 
