@@ -1325,6 +1325,30 @@
     color: orange;
 }
 
+#temalarMenu .overlay-links {
+      margin-top: 150px;
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      font-size: 20px;
+      margin-left: 30px;
+    }
+
+    #temalarMenu .overlay-links a {
+      text-decoration: none;
+      color: rgb(202, 200, 200);
+      font-family: monospace;
+      letter-spacing: 2px;
+    }
+
+    .kaynaklar-item,
+    .ekosistem-item,
+    .gastronomi-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
     </style>
 </head>
 
@@ -1359,7 +1383,17 @@
                 </div>
             </div>
 
-            <div class="nav-item"><a href="#" class="nav-link">TEMALAR</a></div>
+            <div class="nav-item"><a href="temalar.html" class="nav-link has-arrow">TEMALAR</a>
+                <div class="dropdown">
+                  <div class="nav-item has-submenu">
+                    <a href="seyahatkaynaklari.html" class="nav-link">SEYAHAT KAYNAKLARI</a>
+                  </div>
+                  <a href="#">EKOSİSTEM</a>
+                </div>
+              
+          
+              </div>
+        
             <div class="nav-item"><a href="aboutus.html" class="nav-link">BİZ KİMİZ?</a></div>
             <div class="nav-item"><a href="#" class="nav-link">İLETİŞİM</a></div>
         </div>
@@ -1460,6 +1494,47 @@
             </div>
         </div>
     </div>
+
+    <div class="overlay" id="temalarMenu">
+        <div class="overlay-header">
+          <div class="btn-box" id="backTemalar">&#8592;</div>
+          <div class="title">TEMALAR</div>
+          <div></div>
+        </div>
+    
+        <div class="overlay-content">
+          <div class="overlay-links">
+    
+            <div class="kaynaklar-item">
+              <a href="seyahatkaynaklari.html">SEYAHAT KAYNAKLARI</a>
+              <span class="plus-btn" id="openKultur">
+                <i class="fas fa-plus"></i>
+              </span>
+            </div>
+    
+            <div class="ekosistem-item">
+              <a href="#">EKOSİSTEM</a>
+              <span class="plus-btn" id="openDoga">
+                <i class="fas fa-plus"></i>
+              </span>
+            </div>
+    
+            <div class="gastronomi-item">
+              <a href="#">GASTRONOMİ</a>
+              <span class="plus-btn" id="openGastronomi">
+                <i class="fas fa-plus"></i>
+              </span>
+            </div>
+    
+          </div>
+    
+          <div class="overlay-search overlay-box">
+            <input type="text" id="searchInputTemalar" placeholder="Tema arayın" />
+            <button class="clear-btn" id="clearBtnTemalar">&times;</button>
+            <button class="go-btn" id="goBtnTemalar">&#8594;</button>
+          </div>
+        </div>
+      </div>
 
     <div class="container">
 
@@ -2594,7 +2669,25 @@
 
 
 
+// TEMALAR overlay
+const openTemalar = document.getElementById('openTemalar');
+const temalarMenu = document.getElementById('temalarMenu');
+const backTemalar = document.getElementById('backTemalar');
 
+if (openTemalar && temalarMenu && backTemalar) {
+
+  openTemalar.addEventListener('click', (e) => {
+    e.preventDefault();
+    mainMenu.classList.remove('active');
+    temalarMenu.classList.add('active');
+  });
+
+  backTemalar.addEventListener('click', () => {
+    temalarMenu.classList.remove('active');
+    mainMenu.classList.add('active');
+  });
+
+}
 
 
 

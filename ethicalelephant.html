@@ -1317,6 +1317,30 @@
                 justify-content: flex-start;
             }
         }
+
+        #temalarMenu .overlay-links {
+      margin-top: 150px;
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      font-size: 20px;
+      margin-left: 30px;
+    }
+
+    #temalarMenu .overlay-links a {
+      text-decoration: none;
+      color: rgb(202, 200, 200);
+      font-family: monospace;
+      letter-spacing: 2px;
+    }
+
+    .kaynaklar-item,
+    .ekosistem-item,
+    .gastronomi-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
     </style>
 </head>
 
@@ -1351,7 +1375,17 @@
                 </div>
             </div>
 
-            <div class="nav-item"><a href="#" class="nav-link">TEMALAR</a></div>
+            <div class="nav-item"><a href="temalar.html" class="nav-link has-arrow">TEMALAR</a>
+                <div class="dropdown">
+                  <div class="nav-item has-submenu">
+                    <a href="seyahatkaynaklari.html" class="nav-link">SEYAHAT KAYNAKLARI</a>
+                  </div>
+                  <a href="#">EKOSİSTEM</a>
+                </div>
+              
+          
+              </div>
+        
             <div class="nav-item"><a href="aboutus.html" class="nav-link">BİZ KİMİZ?</a></div>
             <div class="nav-item"><a href="#" class="nav-link">İLETİŞİM</a></div>
         </div>
@@ -1453,6 +1487,47 @@
         </div>
     </div>
 
+    <div class="overlay" id="temalarMenu">
+        <div class="overlay-header">
+          <div class="btn-box" id="backTemalar">&#8592;</div>
+          <div class="title">TEMALAR</div>
+          <div></div>
+        </div>
+    
+        <div class="overlay-content">
+          <div class="overlay-links">
+    
+            <div class="kaynaklar-item">
+              <a href="seyahatkaynaklari.html">SEYAHAT KAYNAKLARI</a>
+              <span class="plus-btn" id="openKultur">
+                <i class="fas fa-plus"></i>
+              </span>
+            </div>
+    
+            <div class="ekosistem-item">
+              <a href="#">EKOSİSTEM</a>
+              <span class="plus-btn" id="openDoga">
+                <i class="fas fa-plus"></i>
+              </span>
+            </div>
+    
+            <div class="gastronomi-item">
+              <a href="#">GASTRONOMİ</a>
+              <span class="plus-btn" id="openGastronomi">
+                <i class="fas fa-plus"></i>
+              </span>
+            </div>
+    
+          </div>
+    
+          <div class="overlay-search overlay-box">
+            <input type="text" id="searchInputTemalar" placeholder="Tema arayın" />
+            <button class="clear-btn" id="clearBtnTemalar">&times;</button>
+            <button class="go-btn" id="goBtnTemalar">&#8594;</button>
+          </div>
+        </div>
+      </div>
+
     <div class="container">
 
         <div class="content card">
@@ -1512,7 +1587,8 @@
                     olmakta fayda var; bazı barınaklar “fil gezdirme yok” veya “iş için kullanılmıyor” gibi iddialarda
                     bulunsa da, bunun her zaman gerçek olduğundan emin olmak zor olabiliyor.<br><br>
 
-                    Biz de uzun bir araştırma sürecinin ardından, Chiang Mai'deki <a
+                    Biz de uzun bir araştırma sürecinin ardından, Chiang Mai'deki 
+                    <a
                         href="https://www.elephantnaturepark.org/" target="_blank" rel="noopener noreferrer"
                         style="color: white; font-weight: 600; text-decoration: underline; margin-left: 5px;">
                         elephantnaturepark
@@ -1593,7 +1669,7 @@
                     yaşam alanlarının kaybıdır. İnsan faaliyetleri, fillerin yaşam alanlarını daraltıyor. Ayrıca kaçak
                     avcılık da Asya filinin sayısının azalmasına yol açtı. Fildişi son derece değerli olduğu için
                     filler yıllarca bunun uğruna öldürüldü. 1975’ten beri fildişi ticareti yasaklanmış olsa da ne yazık
-                    ki hâlâ yasadışı olarak devam ediyor.
+                    ki hala yasadışı olarak devam ediyor.
 
                 </p><br><br><br>
 
@@ -1629,13 +1705,41 @@
                     fillerle unutulmaz bir gün geçirmekle kalmaz; aynı zamanda etik turizmi destekler, farkındalık
                     yaratır ve sürdürülebilir koruma çalışmalarına katkı sağlar.
 
-                    Etik bir fil barınağını ziyaret etmek, bağış yapmak, gönüllü olmak veya bu hikâyeleri paylaşmak bile
+                    Etik bir fil barınağını ziyaret etmek, bağış yapmak, gönüllü olmak veya bu hikayeleri paylaşmak bile
                     fark yaratır. Çünkü her destek, bir filin hayatına dokunur ve vahşi yaşamın korunmasına katkıda
                     bulunur.
 
 
                 </p>
             </section>
+
+
+            <section id="yorum-yaz"
+            style="background-color: rgb(24, 24, 24); padding: 40px 20px; margin-top: 60px; color: white;">
+            <div style="max-width: 700px; margin: 0 auto;">
+                <h2 style="text-align: left; margin-bottom: 22px;">Yorum Yaz</h2>
+                <p style="text-align: left; font-size: 14px; color: #aaa;">
+                    E-posta adresiniz yayımlanmayacaktır. Gerekli alanlar * ile işaretlenmiştir.
+                </p>
+                <form action="#" method="post"
+                    style="display: flex; flex-direction: column; gap: 25px; margin-top: 20px;">
+                    <textarea name="yorum" placeholder="Yorumunuz*" required
+                        style="width: 100%; height: 250px; padding: 10px; font-size: 14px; 
+                   border: none; box-shadow: inset 0 0 0 0.5px white; background-color: rgb(24, 24, 24); color: white;"></textarea>
+                    <input type="text" name="isim" placeholder="İsim"
+                        style="width: 100%; height: 50px; padding: 10px; font-size: 14px; 
+                   border: none; box-shadow: inset 0 0 0 0.5px white; background-color: rgb(24, 24, 24); color: white;">
+                    <input type="email" name="email" placeholder="E-posta"
+                        style="width: 100%; height: 50px; padding: 10px; font-size: 14px; 
+                   border: none; box-shadow: inset 0 0 0 0.5px white; background-color: rgb(24, 24, 24); color: white;">
+                    <button type="submit" style="width: 33%; padding: 12px; background-color: transparent; color: white; 
+                   border: none; box-shadow: inset 0 0 0 0.5px white; font-size: 14px; cursor: pointer;">
+                        GÖNDER
+                    </button>
+                </form>
+            </div>
+        </section>
+
 
         </div>
     </div>
@@ -1820,6 +1924,26 @@
                 });
             });
         });
+
+        // TEMALAR overlay
+const openTemalar = document.getElementById('openTemalar');
+const temalarMenu = document.getElementById('temalarMenu');
+const backTemalar = document.getElementById('backTemalar');
+
+if (openTemalar && temalarMenu && backTemalar) {
+
+  openTemalar.addEventListener('click', (e) => {
+    e.preventDefault();
+    mainMenu.classList.remove('active');
+    temalarMenu.classList.add('active');
+  });
+
+  backTemalar.addEventListener('click', () => {
+    temalarMenu.classList.remove('active');
+    mainMenu.classList.add('active');
+  });
+
+}
 
 
     </script>

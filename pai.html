@@ -1349,6 +1349,30 @@
                 font-size: 18px;
             }
         }
+
+        #temalarMenu .overlay-links {
+            margin-top: 150px;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            font-size: 20px;
+            margin-left: 30px;
+        }
+
+        #temalarMenu .overlay-links a {
+            text-decoration: none;
+            color: rgb(202, 200, 200);
+            font-family: monospace;
+            letter-spacing: 2px;
+        }
+
+        .kaynaklar-item,
+        .ekosistem-item,
+        .gastronomi-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
     </style>
 </head>
 
@@ -1382,7 +1406,17 @@
                 </div>
             </div>
 
-            <div class="nav-item"><a href="#" class="nav-link">TEMALAR</a></div>
+            <div class="nav-item"><a href="temalar.html" class="nav-link has-arrow">TEMALAR</a>
+                <div class="dropdown">
+                    <div class="nav-item has-submenu">
+                        <a href="seyahatkaynaklari.html" class="nav-link">SEYAHAT KAYNAKLARI</a>
+                    </div>
+                    <a href="#">EKOSİSTEM</a>
+                </div>
+
+
+            </div>
+
             <div class="nav-item"><a href="aboutus.html" class="nav-link">BİZ KİMİZ?</a></div>
             <div class="nav-item"><a href="#" class="nav-link">İLETİŞİM</a></div>
         </div>
@@ -1484,6 +1518,47 @@
         </div>
     </div>
 
+    <div class="overlay" id="temalarMenu">
+        <div class="overlay-header">
+            <div class="btn-box" id="backTemalar">&#8592;</div>
+            <div class="title">TEMALAR</div>
+            <div></div>
+        </div>
+
+        <div class="overlay-content">
+            <div class="overlay-links">
+
+                <div class="kaynaklar-item">
+                    <a href="seyahatkaynaklari.html">SEYAHAT KAYNAKLARI</a>
+                    <span class="plus-btn" id="openKultur">
+                        <i class="fas fa-plus"></i>
+                    </span>
+                </div>
+
+                <div class="ekosistem-item">
+                    <a href="#">EKOSİSTEM</a>
+                    <span class="plus-btn" id="openDoga">
+                        <i class="fas fa-plus"></i>
+                    </span>
+                </div>
+
+                <div class="gastronomi-item">
+                    <a href="#">GASTRONOMİ</a>
+                    <span class="plus-btn" id="openGastronomi">
+                        <i class="fas fa-plus"></i>
+                    </span>
+                </div>
+
+            </div>
+
+            <div class="overlay-search overlay-box">
+                <input type="text" id="searchInputTemalar" placeholder="Tema arayın" />
+                <button class="clear-btn" id="clearBtnTemalar">&times;</button>
+                <button class="go-btn" id="goBtnTemalar">&#8594;</button>
+            </div>
+        </div>
+    </div>
+
     <div class="container">
 
         <div class="content card">
@@ -1568,11 +1643,10 @@
                     1 Tayland Baht ≈ 1,29 TL (yaklaşık değer)<br>
 
                     1 USD ≈ 33-36 THB civarındadır.<br><br>
-                    Koh Lanta, Tayland’ın diğer turistik bölgelerine göre <strong>daha uygun fiyatlı</strong> bir
-                    adadır;
-                    burada yemekler, konaklama ve günlük harcamalar genellikle daha ekonomiktir. Özellikle plaj
-                    kenarındaki restoranlar ve küçük kafelerde, hem lezzetli hem de hesaplı seçenekler bulmak oldukça
-                    kolaydır.<br><br></p>
+                    Pai, Tayland’ın kuzeyinde yer alan ve özellikle backpacker ruhunu hissettiren <strong>uygun
+                        fiyatlı</strong> bir kasabadır; burada konaklama, yemek ve günlük harcamalar genellikle oldukça
+                    ekonomiktir. Özellikle gece pazarı, küçük vegan kafeler ve yerel restoranlarda hem lezzetli hem de
+                    bütçe dostu seçenekler bulmak oldukça kolaydır.<br><br></p>
 
                 <h4>Pai'ye Ne Zaman Gidilir?</h4>
                 <p>Pai’yi ziyaret etmek için en ideal dönem <strong>Kasım-Şubat</strong> ayları arasıdır. Bu dönemde
@@ -1634,7 +1708,8 @@
                     yaklaşık 3–4 saat sürüyor ve otellerden ya da internetten kolayca bilet alınabiliyor. Konforlu ve
                     pratik olsa da virajlar nedeniyle yol tutmasına karşı önlem almak iyi bir fikir olabilir. <br><br>
 
-                    Daha konforlu ve durarak gitmek isteyenler için <strong>özel araç</strong> ya da <strong>taksi</strong> seçeneği de var. Fiyat diğer
+                    Daha konforlu ve durarak gitmek isteyenler için <strong>özel araç</strong> ya da
+                    <strong>taksi</strong> seçeneği de var. Fiyat diğer
                     alternatiflere göre daha yüksek ama özellikle kalabalık seyahatlerde mantıklı olabiliyor.
                 </p>
 
@@ -1678,21 +1753,21 @@
                     <iframe src="https://www.google.com/maps/d/embed?mid=1WLShcuvtd37LMo6bLi7OApQSiO9P-yA&ehbc=2E312F"
                         width="640" height="480"></iframe>
 
-                    <div class="map-list">
-                        <div class="point"><span class="circle">1</span> Pai Kanyon</div>
-                        <div class="point"><span class="circle">2</span> Pai Bamboo Bridge</div>
-                        <div class="point"><span class="circle">3</span> Wat Phra That Mae Yen</div>
-                        <div class="point"><span class="circle">4</span> Tham Lod Mağarası</div>
-                        <div class="point"><span class="circle">5</span> Sai Ngam Kaplıcası</div>
-                        <div class="point"><span class="circle">6</span> Pai Gece Pazarı</div>
-                        <div class="point"><span class="circle">7</span> Paradise Bar</div>
-                        <div class="point"><span class="circle">8</span> Jazz House Pai</div>
-                        <div class="point"><span class="circle">9</span> Monko Cafe</div>
-                        <div class="point"><span class="circle">10</span> Dream Cafe Pai</div>
-                        <div class="point"><span class="circle">11</span> Cade De Pai</div>
-                        <div class="point"><span class="circle">12</span> Baan Mai Kon Muang Pai Resort</div>
-
-                    </div>
+                        <div class="map-list">
+                            <div class="point"><span class="circle">1</span> Pai Kanyon</div>
+                            <div class="point"><span class="circle">2</span> Pai Bamboo Bridge</div>
+                            <div class="point"><span class="circle">3</span> Wat Phra That Mae Yen</div>
+                            <div class="point"><span class="circle">4</span> Tham Lod Mağarası</div>
+                            <div class="point"><span class="circle">5</span> Sai Ngam Kaplıcası</div>
+                            <div class="point"><span class="circle">6</span> Pai Gece Pazarı</div>
+                            <div class="point"><span class="circle">7</span> Paradise Bar</div>
+                            <div class="point"><span class="circle">8</span> Jazz House Pai</div>
+                            <div class="point"><span class="circle">9</span> Monko Cafe</div>
+                            <div class="point"><span class="circle">10</span> Dream Cafe Pai</div>
+                            <div class="point"><span class="circle">11</span> Cade De Pai</div>
+                            <div class="point"><span class="circle">12</span> Baan Mai Kon Muang Pai Resort</div>
+    
+                        </div>
                 </div><br><br><br>
 
 
@@ -2408,6 +2483,26 @@
                 });
             });
         });
+
+        // TEMALAR overlay
+        const openTemalar = document.getElementById('openTemalar');
+        const temalarMenu = document.getElementById('temalarMenu');
+        const backTemalar = document.getElementById('backTemalar');
+
+        if (openTemalar && temalarMenu && backTemalar) {
+
+            openTemalar.addEventListener('click', (e) => {
+                e.preventDefault();
+                mainMenu.classList.remove('active');
+                temalarMenu.classList.add('active');
+            });
+
+            backTemalar.addEventListener('click', () => {
+                temalarMenu.classList.remove('active');
+                mainMenu.classList.add('active');
+            });
+
+        }
 
 
 
